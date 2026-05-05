@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Sitemap: https://planbot.vercel.app/sitemap.xml

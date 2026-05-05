@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-main: #0A0E23;
+  --bg-surface: #121C4A;
+  --primary: #1E90FF;
+  --accent: #00C6FF;
+  --pink: #FF1493;
+  --glass-bg: rgba(255,255,255,0.05);
+  --glass-border: rgba(255,255,255,0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: #FFFFFF;
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.15);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+/* Glassmorphism utilities */
+@layer components {
+  .glass-card {
+    @apply bg-glass-bg border border-glass-border rounded-glass;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+  }
+  .glass-card:hover {
+    border-color: rgba(0, 198, 255, 0.2);
+    box-shadow: 0 0 30px rgba(0, 198, 255, 0.15);
+  }
+
+  .glass-panel {
+    @apply bg-glass-bg border border-glass-border;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #1E90FF, #00C6FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-pink {
+    background: linear-gradient(135deg, #FF1493, #00C6FF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-white transition-all duration-300;
+    background: linear-gradient(135deg, #1E90FF, #00C6FF);
+  }
+  .btn-primary:hover {
+    box-shadow: 0 0 30px rgba(0, 198, 255, 0.5);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold transition-all duration-300;
+    @apply bg-glass-bg border border-glass-border text-white;
+  }
+  .btn-secondary:hover {
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 0 20px rgba(255,255,255,0.1);
+    transform: translateY(-2px);
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight;
+  }
+
+  .section-subheading {
+    @apply text-lg md:text-xl text-text-secondary max-w-2xl mx-auto mt-4;
+  }
+}
+
+/* Animated gradient background */
+.animated-gradient-bg {
+  background: linear-gradient(
+    135deg,
+    #0A0E23 0%,
+    #0F1B3D 25%,
+    #0A0E23 50%,
+    #121C4A 75%,
+    #0A0E23 100%
+  );
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Marquee animations */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  .animated-gradient-bg {
+    animation: none;
+  }
+  .animate-marquee,
+  .animate-marquee-reverse {
+    animation: none !important;
+  }
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+/* MDX blog content styling */
+.prose-planbot h2 {
+  @apply text-2xl font-bold text-white mt-10 mb-4;
+}
+.prose-planbot h3 {
+  @apply text-xl font-semibold text-white mt-8 mb-3;
+}
+.prose-planbot p {
+  @apply text-text-secondary leading-relaxed mb-4;
+}
+.prose-planbot ul, .prose-planbot ol {
+  @apply text-text-secondary mb-4 pl-6;
+}
+.prose-planbot li {
+  @apply mb-2;
+}
+.prose-planbot strong {
+  @apply text-white font-semibold;
+}
+.prose-planbot a {
+  @apply text-accent underline underline-offset-4 hover:text-primary transition-colors;
+}
+.prose-planbot blockquote {
+  @apply border-l-4 border-primary pl-4 italic text-text-secondary my-6;
+}
+.prose-planbot code {
+  @apply bg-surface px-2 py-1 rounded text-accent text-sm;
+}
