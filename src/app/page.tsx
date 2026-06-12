@@ -5,7 +5,7 @@ import PricingCard from '@/components/PricingCard';
 import BlogCard from '@/components/BlogCard';
 import StructuredData from '@/components/StructuredData';
 import { getAllPosts } from '@/lib/mdx';
-import { websiteSchema, mobileAppSchema, createFAQSchema } from '@/lib/seo';
+import { websiteSchema, mobileAppSchema, createFAQSchema, createWebPageSchema, createBreadcrumbSchema, createSpeakableSchema } from '@/lib/seo';
 
 const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=cpm.planbot';
 
@@ -49,18 +49,18 @@ const homeFAQs = [
 ];
 
 const features = [
-  { icon: '🤖', title: 'AI-Powered Plans', desc: 'Advanced AI creates plans tailored to YOUR goal in seconds' },
-  { icon: '🔥', title: 'Streak System', desc: 'Daily streaks, XP levels, and freeze protection keep you going' },
-  { icon: '📊', title: 'Weekly AI Reports', desc: 'Elite users get a personalized AI performance analysis every Monday' },
-  { icon: '🎯', title: 'Works for Everyone', desc: 'JEE, NEET, Job, Business, Sports, Fitness — any goal type' },
-  { icon: '❄️', title: 'Streak Freeze', desc: 'Protect your streak with freeze charges. Never lose progress again' },
-  { icon: '🎁', title: '3-Day God Trial', desc: 'Try our most powerful tier FREE. No credit card needed' },
+  { icon: '🤖', title: 'AI-Powered Plans', desc: 'Advanced AI creates plans tailored to YOUR goal in seconds', link: '/blog/ai-scheduling-workflow-automation' },
+  { icon: '🔥', title: 'Streak System', desc: 'Daily streaks, XP levels, and freeze protection keep you going', link: '/blog/build-unbreakable-habits-ai-gamification' },
+  { icon: '📊', title: 'Weekly AI Reports', desc: 'Elite users get a personalized AI performance analysis every Monday', link: '/blog/deep-work-focus-systems-ai' },
+  { icon: '🎯', title: 'Works for Everyone', desc: 'JEE, NEET, Job, Business, Sports, Fitness — any goal type', link: '/blog/student-routine-generation-ai' },
+  { icon: '❄️', title: 'Streak Freeze', desc: 'Protect your streak with freeze charges. Never lose progress again', link: '/features' },
+  { icon: '🎁', title: '3-Day God Trial', desc: 'Try our most powerful tier FREE. No credit card needed', link: '/pricing' },
 ];
 
 const steps = [
-  { num: '01', title: 'Choose Your Goal', desc: 'Pick from Student, Professional, Athlete, Business & more' },
-  { num: '02', title: 'AI Builds Your Plan', desc: 'Our AI creates a personalized daily schedule just for you' },
-  { num: '03', title: 'Track & Improve', desc: 'Streaks, XP, and weekly AI performance reports' },
+  { num: '01', title: 'Choose Your Goal', desc: 'Pick from Student, Professional, Athlete, Business & more', link: '/blog/how-entrepreneurs-use-ai-plan-day' },
+  { num: '02', title: 'AI Builds Your Plan', desc: 'Our AI creates a personalized daily schedule just for you', link: '/blog/ai-scheduling-workflow-automation' },
+  { num: '03', title: 'Track & Improve', desc: 'Streaks, XP, and weekly AI performance reports', link: '/blog/deep-work-focus-systems-ai' },
 ];
 
 export default function HomePage() {
@@ -71,9 +71,29 @@ export default function HomePage() {
       <StructuredData data={websiteSchema} />
       <StructuredData data={mobileAppSchema} />
       <StructuredData data={createFAQSchema(homeFAQs)} />
+      <StructuredData data={createWebPageSchema(
+        'PlanBot — AI Daily Planner App',
+        'PlanBot creates your perfect personalized daily plan in seconds using advanced AI.',
+        'https://planbotai.app/'
+      )} />
+      <StructuredData data={createBreadcrumbSchema([
+        { name: 'Home', item: 'https://planbotai.app/' }
+      ])} />
+      {/* Phase 2 Fix #6 — Speakable schema for voice/AEO */}
+      <StructuredData data={createSpeakableSchema('https://planbotai.app/', 'PlanBot — AI Daily Planner App')} />
+
+      {/* ── Hidden Semantic Entities for AI/SEO ── */}
+      <div className="sr-only" aria-hidden="false">
+        <h2>Advanced AI Planner App & Productivity Assistant</h2>
+        <p>
+          PlanBot is an AI productivity app designed to be the ultimate daily planner AI. It functions as an AI scheduling assistant, study planner, and routine optimization engine. 
+          By using our AI schedule generator, students achieve better focus optimization, and professionals master time management. 
+          PlanBot replaces manual task management with adaptive scheduling, acting as your personal AI organization tool and routine planner AI.
+        </p>
+      </div>
 
       {/* ── Hero Section ── */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
+      <header className="relative min-h-[90vh] flex items-center justify-center overflow-hidden pt-20">
         <SmokeBackground smokeColor="#1E90FF" />
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center py-20">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-6">
@@ -103,17 +123,17 @@ export default function HomePage() {
             <span>⭐ Free to Start</span>
           </div>
         </div>
-      </section>
+      </header>
 
       {/* ── App Notice ── */}
-      <div className="bg-surface/50 border-y border-glass-border py-4 px-4 text-center">
+      <aside className="bg-surface/50 border-y border-glass-border py-4 px-4 text-center" aria-label="App download notice">
         <p className="text-sm text-text-secondary">
           📱 PlanBot is an Android app. This website shares tips and guides.{' '}
-          <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="text-accent font-semibold hover:underline">
+          <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="text-accent font-semibold underline hover:text-primary">
             Download the app to start planning →
           </a>
         </p>
-      </div>
+      </aside>
 
       {/* ── Feature Ticker ── */}
       <FeatureTicker />
@@ -131,7 +151,10 @@ export default function HomePage() {
               <div key={step.num} className="text-center md:text-left">
                 <span className="inline-block text-5xl font-bold text-gradient mb-4">{step.num}</span>
                 <h3 className="text-xl font-semibold text-white mb-2">{step.title}</h3>
-                <p className="text-text-secondary">{step.desc}</p>
+                <p className="text-text-secondary mb-3">{step.desc}</p>
+                {step.link && (
+                  <a href={step.link} className="text-sm text-accent underline hover:text-primary font-medium">Read guide →</a>
+                )}
               </div>
             ))}
           </div>
@@ -153,7 +176,10 @@ export default function HomePage() {
               <div key={f.title} className="glass-card p-6 md:p-8">
                 <span className="text-4xl mb-4 block">{f.icon}</span>
                 <h3 className="text-lg font-semibold text-white mb-2">{f.title}</h3>
-                <p className="text-sm text-text-secondary">{f.desc}</p>
+                <p className="text-sm text-text-secondary mb-3">{f.desc}</p>
+                {f.link && (
+                  <a href={f.link} className="text-xs font-semibold text-accent underline hover:text-primary">Learn more →</a>
+                )}
               </div>
             ))}
           </div>
@@ -242,6 +268,26 @@ export default function HomePage() {
         </section>
       )}
 
+      {/* ── SEO FAQ Section ── */}
+      <section className="py-16 px-4 sm:px-6" aria-labelledby="faq-heading">
+        <div className="max-w-3xl mx-auto">
+          <h2 id="faq-heading" className="sr-only">Frequently Asked Questions about PlanBot AI Planner</h2>
+          <div className="space-y-3">
+            {homeFAQs.map((faq, i) => (
+              <details key={i} className="group border border-glass-border bg-surface/30 rounded-lg transition-colors hover:bg-surface/50">
+                <summary className="cursor-pointer p-4 font-medium text-white flex justify-between items-center list-none outline-none">
+                  <span className="text-sm md:text-base">{faq.question}</span>
+                  <span className="text-accent transition-transform duration-300 group-open:rotate-180" aria-hidden="true">▼</span>
+                </summary>
+                <div className="p-4 pt-0 text-text-secondary text-sm md:text-base leading-relaxed">
+                  <span>{faq.answer}</span>
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── Final CTA ── */}
       <section className="py-20 md:py-28 px-4 sm:px-6 text-center">
         <div className="max-w-3xl mx-auto">
@@ -256,6 +302,23 @@ export default function HomePage() {
           </a>
         </div>
       </section>
+
+      {/* ── EEAT & SEO Credibility Section ── */}
+      <footer className="py-8 px-4 sm:px-6 border-t border-glass-border bg-surface/20" aria-label="Trust and Authority Signals">
+        <div className="max-w-5xl mx-auto text-xs text-text-dim leading-relaxed text-center md:text-left">
+          <h2 className="sr-only">About PlanBot AI & Our Mission</h2>
+          <p className="mb-3">
+            <strong className="text-white/60">PlanBot</strong> is developed by <strong className="text-white/60">PlannextTech</strong>, founded by <strong className="text-white/60">Naitik Baldaniya</strong>. We are a team of productivity experts and developers committed to building advanced AI scheduling assistants. Our mission is to help Indian students (JEE, NEET), professionals, and athletes optimize their routines using cutting-edge AI daily planner technology.
+          </p>
+          <p className="mb-3">
+            With a growing user base relying on our AI study planners and productivity tools, PlanBot sets the standard for personalized scheduling, habit building, and AI-driven time management. We prioritize user privacy, data-driven productivity improvement, and seamless mobile experiences.
+          </p>
+          <div className="sr-only" aria-hidden="false">
+            <h3>Our Planning Methodology</h3>
+            <p>Our productivity workflow methodology combines evidence-based productivity principles with advanced machine learning. By utilizing adaptive scheduling, PlanBot continually learns from your task completion rates, optimizing your focus time and enforcing schedule automation. It serves as a comprehensive productivity methodology engine designed to eliminate procrastination and maximize output.</p>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }

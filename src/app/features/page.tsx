@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import StructuredData from '@/components/StructuredData';
-import { createMetadata } from '@/lib/seo';
+import { createMetadata, createWebPageSchema, createBreadcrumbSchema } from '@/lib/seo';
 
 const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=cpm.planbot';
 
@@ -8,15 +8,16 @@ export const metadata: Metadata = createMetadata({
   title: 'PlanBot Features — AI Planning for Every Goal',
   description: 'Explore PlanBot features: AI plan generation, streak system, weekly AI reports, photo input, gamification. Powered by advanced AI.',
   path: '/features',
+  image: '/og/features.png',
 });
 
 const allFeatures = [
-  { icon: '🤖', title: 'AI-Powered Plan Generation', desc: 'PlanBot uses cutting-edge AI models to create daily plans tailored to your goals. Whether preparing for JEE, managing a startup, or training for a marathon, the AI analyzes your objectives and generates actionable schedules.', detail: 'Each tier unlocks progressively more powerful AI — from Basic AI (Free) to our most advanced Premium AI (God).', forWho: 'Students, professionals, athletes, entrepreneurs.' },
-  { icon: '🔥', title: 'Streak System & Gamification', desc: 'Stay motivated with daily streaks, XP, levels, and achievements. The gamification layer turns productivity into a game you want to play. Freeze charges protect your streak if you miss a day.', detail: 'Freeze charges regenerate or can be purchased as boost packs.', forWho: 'Anyone who struggles with consistency.' },
-  { icon: '📊', title: 'Weekly AI Progress Reports', desc: 'Every Monday, Elite and God tier users receive an AI-generated performance analysis — what you accomplished, where you fell behind, and what to adjust.', detail: 'Reports include completion rates, streak health, time distribution, and personalized improvement suggestions.', forWho: 'Serious goal-chasers wanting data-driven insights.' },
-  { icon: '📸', title: 'Upload Photo Input', desc: 'Upload a photo of handwritten notes or a whiteboard and PlanBot extracts the text into actionable tasks automatically. Available on God tier.', detail: 'Perfect for students digitizing class notes into study plans.', forWho: 'Students and professionals.' },
-  { icon: '🎯', title: 'Goal Personas', desc: 'Choose a persona — Student, Professional, Athlete, Entrepreneur, or Fitness Enthusiast — and the AI adapts its planning logic to your lifestyle.', detail: 'Study blocks for students, deep work for professionals, training splits for athletes.', forWho: 'Everyone — PlanBot adapts to YOUR life.' },
-  { icon: '💬', title: 'AI Chat Interface', desc: 'Talk to PlanBot naturally. Describe your goals, adjust plans, get advice — all through conversation. No forms or templates.', detail: 'Messages: 1/day (Free), 4/day (Pro), 15/day (Elite), unlimited (God).', forWho: 'Anyone preferring conversational interfaces.' },
+  { icon: '🤖', title: 'AI-Powered Plan Generation', desc: 'PlanBot uses cutting-edge AI models to create daily plans tailored to your goals. Whether preparing for JEE, managing a startup, or training for a marathon, the AI analyzes your objectives and generates actionable schedules.', detail: 'Each tier unlocks progressively more powerful AI — from Basic AI (Free) to our most advanced Premium AI (God).', forWho: 'Students, professionals, athletes, entrepreneurs.', link: '/blog/ai-scheduling-workflow-automation', linkText: 'Read about AI Workflow Automation →' },
+  { icon: '🔥', title: 'Streak System & Gamification', desc: 'Stay motivated with daily streaks, XP, levels, and achievements. The gamification layer turns productivity into a game you want to play. Freeze charges protect your streak if you miss a day.', detail: 'Freeze charges regenerate or can be purchased as boost packs.', forWho: 'Anyone who struggles with consistency.', link: '/blog/build-unbreakable-habits-ai-gamification', linkText: 'Learn about Habit Gamification →' },
+  { icon: '📊', title: 'Weekly AI Progress Reports', desc: 'Every Monday, Elite and God tier users receive an AI-generated performance analysis — what you accomplished, where you fell behind, and what to adjust.', detail: 'Reports include completion rates, streak health, time distribution, and personalized improvement suggestions.', forWho: 'Serious goal-chasers wanting data-driven insights.', link: '/blog/deep-work-focus-systems-ai', linkText: 'Master Deep Work Systems →' },
+  { icon: '📸', title: 'Upload Photo Input', desc: 'Upload a photo of handwritten notes or a whiteboard and PlanBot extracts the text into actionable tasks automatically. Available on God tier.', detail: 'Perfect for students digitizing class notes into study plans.', forWho: 'Students and professionals.', link: '/blog/student-routine-generation-ai', linkText: 'See AI Student Planning guide →' },
+  { icon: '🎯', title: 'Goal Personas', desc: 'Choose a persona — Student, Professional, Athlete, Entrepreneur, or Fitness Enthusiast — and the AI adapts its planning logic to your lifestyle.', detail: 'Study blocks for students, deep work for professionals, training splits for athletes.', forWho: 'Everyone — PlanBot adapts to YOUR life.', link: '/blog/how-entrepreneurs-use-ai-plan-day', linkText: 'Explore Persona Use Cases →' },
+  { icon: '💬', title: 'AI Chat Interface', desc: 'Talk to PlanBot naturally. Describe your goals, adjust plans, get advice — all through conversation. No forms or templates.', detail: 'Messages: 1/day (Free), 4/day (Pro), 15/day (Elite), unlimited (God).', forWho: 'Anyone preferring conversational interfaces.', link: '/blog/what-is-ai-planner-app-complete-guide', linkText: 'What is an AI Planner App? →' },
 ];
 
 const comparisonRows = [
@@ -33,6 +34,15 @@ export default function FeaturesPage() {
   return (
     <>
       <StructuredData data={{ '@context': 'https://schema.org', '@type': 'SoftwareApplication', name: 'PlanBot', applicationCategory: 'ProductivityApplication', operatingSystem: 'Android' }} />
+      <StructuredData data={createWebPageSchema(
+        'PlanBot Features — AI Planning for Every Goal',
+        'Explore PlanBot features: AI plan generation, streak system, weekly AI reports, photo input, gamification. Powered by advanced AI.',
+        'https://planbotai.app/features'
+      )} />
+      <StructuredData data={createBreadcrumbSchema([
+        { name: 'Home', item: 'https://planbotai.app/' },
+        { name: 'Features', item: 'https://planbotai.app/features' }
+      ])} />
 
       <section className="pt-28 pb-16 md:pt-36 md:pb-20 px-4 sm:px-6 text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
@@ -52,7 +62,12 @@ export default function FeaturesPage() {
                 <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{f.title}</h2>
                 <p className="text-text-secondary leading-relaxed mb-3">{f.desc}</p>
                 <p className="text-text-secondary leading-relaxed mb-3">{f.detail}</p>
-                <p className="text-sm text-accent font-medium">Who it&apos;s for: {f.forWho}</p>
+                <p className="text-sm text-accent font-medium mb-3">Who it&apos;s for: {f.forWho}</p>
+                {f.link && (
+                  <a href={f.link} className="inline-block mt-2 text-sm font-semibold text-white/80 hover:text-white hover:underline transition-colors">
+                    {f.linkText}
+                  </a>
+                )}
               </article>
               {(i + 1) % 2 === 0 && (
                 <div className="text-center mt-8">

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { createMetadata, organizationSchema } from '@/lib/seo';
+import { createMetadata, organizationSchema, createWebPageSchema, createBreadcrumbSchema } from '@/lib/seo';
 import StructuredData from '@/components/StructuredData';
 
 const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=cpm.planbot';
@@ -8,20 +8,40 @@ export const metadata: Metadata = createMetadata({
   title: 'About PlanBot — Built by PlannextTech in India',
   description: 'PlanBot is an AI-powered daily planner app built by PlannextTech in India. Learn about our mission to make AI-powered planning accessible to everyone.',
   path: '/about',
+  image: '/og/about.png',
 });
 
 export default function AboutPage() {
   return (
     <>
       <StructuredData data={organizationSchema} />
+      <StructuredData data={createWebPageSchema(
+        'About PlanBot — Built by PlannextTech in India',
+        'PlanBot is an AI-powered daily planner app built by PlannextTech in India.',
+        'https://planbotai.app/about'
+      )} />
+      <StructuredData data={createBreadcrumbSchema([
+        { name: 'Home', item: 'https://planbotai.app/' },
+        { name: 'About', item: 'https://planbotai.app/about' }
+      ])} />
 
-      <section className="pt-28 pb-16 md:pt-36 md:pb-20 px-4 sm:px-6 text-center">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+      <section className="pt-28 pb-16 md:pt-36 md:pb-20 px-4 sm:px-6 text-center" aria-labelledby="about-heading">
+        <h1 id="about-heading" className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
           Built with ❤️ in India by <span className="text-gradient">PlannextTech</span>
         </h1>
         <p className="text-lg text-text-secondary max-w-3xl mx-auto">
           PlanBot is the AI daily planner for ambitious people who refuse to settle. We believe everyone deserves a personal AI planning assistant — not just those who can afford premium tools.
         </p>
+
+        {/* ── Semantic EEAT Hidden Section ── */}
+        <div className="sr-only" aria-hidden="false">
+          <h2>About PlannextTech and PlanBot AI</h2>
+          <p>
+            PlannextTech is an Indian software development organization specializing in AI productivity tools. 
+            PlanBot, our flagship Android application, serves as an AI scheduling assistant, routine optimizer, and study planner. 
+            We focus on evidence-based productivity, integrating time management psychology with machine learning to automate task management and routine planning.
+          </p>
+        </div>
       </section>
 
       <section className="pb-20 px-4 sm:px-6">
@@ -42,6 +62,42 @@ export default function AboutPage() {
               With streak systems, gamification, and weekly AI performance reports, PlanBot keeps you accountable. It&apos;s not just about planning — it&apos;s about execution.
             </p>
           </div>
+
+          <article className="glass-card p-8 border-l-4 border-l-accent relative overflow-hidden" itemScope itemType="https://schema.org/Person">
+            {/* Background glow */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-accent/10 blur-3xl rounded-full"></div>
+            
+            <h2 className="text-2xl font-bold text-white mb-6">About the Founder</h2>
+            <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
+              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-4xl shadow-lg shadow-accent/20 shrink-0">
+                👨‍💻
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-white mb-1" itemProp="name">Naitik Baldaniya</h3>
+                <p className="text-accent font-medium text-sm mb-3" itemProp="jobTitle">Founder & Developer, PlanBot (PlannextTech)</p>
+                <p className="text-text-secondary leading-relaxed mb-4">
+                  Naitik built PlanBot to solve a fundamental problem: students and professionals spend too much time planning and not enough time executing. With a deep focus on AI productivity systems and task automation, Naitik engineered PlanBot to act as a personal productivity coach.
+                </p>
+                
+                {/* Semantic Expertise Signals */}
+                <div className="sr-only" aria-hidden="false">
+                  <h4>Expertise and Authority</h4>
+                  <p>
+                    Naitik Baldaniya is an expert software engineer and productivity system architect. 
+                    With extensive experience in Flutter, Firebase, and AI integrations, he designs adaptive scheduling algorithms and AI study planners. 
+                    His methodology emphasizes removing cognitive friction from daily routines using AI.
+                  </p>
+                </div>
+
+                <div className="flex items-center gap-4 text-sm font-medium">
+                  {/* Note: Update these links when available */}
+                  <a href="https://github.com/naitik-baldaniya" itemProp="sameAs" target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-white transition-colors">GitHub</a>
+                  <a href="https://linkedin.com/in/naitik-baldaniya" itemProp="sameAs" target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-white transition-colors">LinkedIn</a>
+                  <a href="https://x.com/naitik-baldaniya" itemProp="sameAs" target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-white transition-colors">X (Twitter)</a>
+                </div>
+              </div>
+            </div>
+          </article>
 
           <div className="glass-card p-8">
             <h2 className="text-2xl font-bold text-white mb-4">The Tech Behind PlanBot</h2>

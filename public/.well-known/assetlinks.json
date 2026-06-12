@@ -1,10 +1,15 @@
 [
   {
-    "relation": ["delegate_permission/common.handle_all_urls"],
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
     "target": {
       "namespace": "android_app",
       "package_name": "cpm.planbot",
-      "sha256_cert_fingerprints": []
+      "sha256_cert_fingerprints": [
+        "FC:99:3D:5B:FF:BB:F3:FC:1F:95:02:8A:72:2D:32:3E:66:4A:1F:6E:FB:69:5A:33:B2:34:9D:63:C4:AD:A5:D7"
+      ]
     }
   }
 ]

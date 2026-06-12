@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=cpm.planbot';
 
@@ -63,8 +64,17 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="text-2xl font-bold text-gradient">
-              PlanBot
+            <Link href="/" className="flex items-center gap-3 group">
+              <div className="relative w-8 h-8 rounded-lg overflow-hidden border border-white/10 group-hover:border-primary/50 transition-colors">
+                <Image 
+                  src="/logo.jpeg" 
+                  alt="PlanBot Logo" 
+                  fill
+                  className="object-cover"
+                  sizes="32px"
+                />
+              </div>
+              <span className="text-2xl font-bold text-gradient">PlanBot</span>
             </Link>
             <p className="mt-3 text-sm text-text-secondary leading-relaxed">
               AI-powered daily planner for ambitious people. Your goal, your plan.

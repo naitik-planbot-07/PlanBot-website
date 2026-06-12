@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=cpm.planbot';
 
@@ -21,7 +22,16 @@ export default function Nav() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="relative w-8 h-8 rounded-lg overflow-hidden border border-white/10 group-hover:border-primary/50 transition-colors">
+              <Image 
+                src="/logo.jpeg" 
+                alt="PlanBot Logo" 
+                fill
+                className="object-cover"
+                sizes="32px"
+              />
+            </div>
             <span className="text-2xl font-bold text-gradient">PlanBot</span>
           </Link>
 

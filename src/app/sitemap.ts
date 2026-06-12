@@ -1,7 +1,6 @@
 import type { MetadataRoute } from 'next';
-import { getAllSlugs } from '@/lib/mdx';
-
-const SITE_URL = 'https://planbot-n07.web.app';
+import { getAllPosts } from '@/lib/mdx';
+import { SITE_URL } from '@/lib/seo';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
@@ -11,12 +10,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/about`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.7 },
     { url: `${SITE_URL}/contact`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.6 },
     { url: `${SITE_URL}/blog`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.8 },
+    { url: `${SITE_URL}/blog/ai-planner-guide`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.95 },
   ];
 
-  const blogSlugs = getAllSlugs();
-  const blogPages = blogSlugs.map((slug) => ({
-    url: `${SITE_URL}/blog/${slug}`,
-    lastModified: new Date(),
+  const blogPosts = getAllPosts();
+  const blogPages = blogPosts.map((post) => ({
+    url: `${SITE_URL}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }));

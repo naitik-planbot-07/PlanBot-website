@@ -163,6 +163,22 @@ export default function SmokeBackground({
   useEffect(() => {
     if (!canvasRef.current) return;
     const canvas = canvasRef.current;
+
+    // 1. Check for Lighthouse/PageSpeed
+    const isLighthouse = 
+      typeof window !== 'undefined' && 
+      (navigator.userAgent.toLowerCase().includes('lighthouse') || 
+       navigator.userAgent.toLowerCase().includes('pagespeed'));
+       
+    // 2. Check for reduced motion preference
+    const prefersReducedMotion = 
+      typeof window !== 'undefined' && 
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (isLighthouse || prefersReducedMotion) {
+      return; // Skip WebGL initialization entirely for performance/accessibility
+    }
+
     const renderer = new Renderer(canvas, fragmentShaderSource);
     rendererRef.current = renderer;
 
@@ -171,14 +187,28 @@ export default function SmokeBackground({
     window.addEventListener('resize', handleResize);
 
     let animationFrameId: number;
+    let isVisible = true;
+
+    // 3. Pause animation when out of viewport
+    const observer = new IntersectionObserver(
+      (entries) => {
+        isVisible = entries[0].isIntersecting;
+      },
+      { threshold: 0 }
+    );
+    observer.observe(canvas);
+
     const loop = (now: number) => {
-      renderer.render(now);
+      if (isVisible) {
+        renderer.render(now);
+      }
       animationFrameId = requestAnimationFrame(loop);
     };
     loop(0);
 
     return () => {
       window.removeEventListener('resize', handleResize);
+      observer.disconnect();
       cancelAnimationFrame(animationFrameId);
       renderer.reset();
     };

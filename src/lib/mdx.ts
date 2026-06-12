@@ -4,6 +4,13 @@ import matter from 'gray-matter';
 
 const CONTENT_DIR = path.join(process.cwd(), 'src', 'content', 'blog');
 
+export interface Author {
+  name: string;
+  role: string;
+  expertise: string;
+  url?: string;
+}
+
 export interface BlogPost {
   slug: string;
   title: string;
@@ -11,9 +18,11 @@ export interface BlogPost {
   date: string;
   category: string;
   tags: string[];
-  author: string;
+  author: Author;
   readTime: string;
   content: string;
+  howToSteps?: Array<{ name: string; text: string }>;
+  heroImage?: string;
 }
 
 export function getAllPosts(): BlogPost[] {
@@ -34,8 +43,10 @@ export function getAllPosts(): BlogPost[] {
       date: data.date || '',
       category: data.category || 'General',
       tags: data.tags || [],
-      author: data.author || 'PlanBot Team',
+      author: typeof data.author === 'object' ? data.author : { name: data.author || 'PlanBot Team', role: 'Editor', expertise: 'General Productivity' },
       readTime: data.readTime || '5 min read',
+      howToSteps: data.howToSteps || undefined,
+      heroImage: data.heroImage || undefined,
       content,
     };
   });
@@ -57,8 +68,10 @@ export function getPostBySlug(slug: string): BlogPost | null {
     date: data.date || '',
     category: data.category || 'General',
     tags: data.tags || [],
-    author: data.author || 'PlanBot Team',
+    author: typeof data.author === 'object' ? data.author : { name: data.author || 'PlanBot Team', role: 'Editor', expertise: 'General Productivity' },
     readTime: data.readTime || '5 min read',
+    howToSteps: data.howToSteps || undefined,
+    heroImage: data.heroImage || undefined,
     content,
   };
 }
@@ -80,4 +93,25 @@ export function getAllSlugs(): string[] {
   return fs.readdirSync(CONTENT_DIR)
     .filter((f) => f.endsWith('.mdx'))
     .map((f) => f.replace(/\.mdx$/, ''));
+}
+
+export function getRelatedPosts(currentSlug: string, tags: string[], category: string, limit: number = 3): BlogPost[] {
+  const allPosts = getAllPosts().filter((p) => p.slug !== currentSlug);
+  
+  // Score posts based on matching tags and category
+  const scoredPosts = allPosts.map((post) => {
+    let score = 0;
+    if (post.category === category) score += 2;
+    const matchingTags = post.tags.filter((tag) => tags.includes(tag));
+    score += matchingTags.length;
+    return { post, score };
+  });
+
+  // Sort by score descending, then by date descending
+  scoredPosts.sort((a, b) => {
+    if (b.score !== a.score) return b.score - a.score;
+    return new Date(b.post.date).getTime() - new Date(a.post.date).getTime();
+  });
+
+  return scoredPosts.slice(0, limit).map((s) => s.post);
 }

@@ -182,3 +182,33 @@ body {
 .prose-planbot code {
   @apply bg-surface px-2 py-1 rounded text-accent text-sm;
 }
+
+/* AEO/TL;DR Answer Block — Phase 2 Fix #8
+ * These blocks appear at the top of every blog post for AEO optimization.
+ * The .aeo-answer and .tl-dr classes are targeted by Speakable schema
+ * for voice search engines (Google Assistant, Siri, Alexa).
+ */
+.prose-planbot .aeo-answer,
+.aeo-answer {
+  background: linear-gradient(135deg, rgba(30, 144, 255, 0.08), rgba(0, 198, 255, 0.05));
+  border-left: 4px solid var(--primary);
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(30, 144, 255, 0.15);
+  border-left-width: 4px;
+}
+.prose-planbot .aeo-answer p,
+.aeo-answer p {
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+.prose-planbot .aeo-answer p:last-child,
+.aeo-answer p:last-child {
+  margin-bottom: 0;
+}
+.prose-planbot .aeo-answer strong,
+.aeo-answer strong {
+  color: var(--accent);
+}
