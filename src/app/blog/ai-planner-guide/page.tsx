@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'The Complete Guide to AI Planning in 2026',
   description: 'Everything you need to know about AI daily planners. Discover how students, professionals, and entrepreneurs use AI to automate their scheduling and achieve goals.',
   alternates: {
-    canonical: 'https://planbotai.app/blog/ai-planner-guide',
+    canonical: 'https://planbotai.app/blog/ai-planner-guide/',
   },
 };
 
@@ -17,14 +17,14 @@ export default function AiPlannerGuidePage() {
       <StructuredData data={createWebPageSchema(
         'The Complete Guide to AI Planning in 2026',
         'Everything you need to know about AI daily planners.',
-        'https://planbotai.app/blog/ai-planner-guide'
+        'https://planbotai.app/blog/ai-planner-guide/'
       )} />
       <StructuredData data={createBreadcrumbSchema([
         { name: 'Home', item: 'https://planbotai.app/' },
-        { name: 'Blog', item: 'https://planbotai.app/blog' },
-        { name: 'AI Planner Guide', item: 'https://planbotai.app/blog/ai-planner-guide' }
+        { name: 'Blog', item: 'https://planbotai.app/blog/' },
+        { name: 'AI Planner Guide', item: 'https://planbotai.app/blog/ai-planner-guide/' }
       ])} />
-      <StructuredData data={createSpeakableSchema('https://planbotai.app/blog/ai-planner-guide', 'The Complete Guide to AI Planning')} />
+      <StructuredData data={createSpeakableSchema('https://planbotai.app/blog/ai-planner-guide/', 'The Complete Guide to AI Planning')} />
 
       <main className="pt-28 pb-20 md:pt-36 px-4 sm:px-6 relative overflow-hidden">
         <div className="absolute top-1/4 -left-64 w-[500px] h-[500px] bg-primary/20 blur-[120px] rounded-full mix-blend-screen pointer-events-none" />

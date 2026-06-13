@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         },
       ],
     },
-    alternates: { canonical: `https://planbotai.app/blog/${params.slug}` },
+    alternates: { canonical: `https://planbotai.app/blog/${params.slug}/` },
   };
 }
 
@@ -57,11 +57,11 @@ export default function BlogPost({ params }: Props) {
     <>
       <StructuredData data={createArticleSchema({ title: post.title, description: post.description, date: post.date, author: post.author, slug: post.slug, image: post.heroImage })} />
       {/* Phase 2 — Speakable schema for AEO/voice search on blog posts */}
-      <StructuredData data={createSpeakableSchema(`https://planbotai.app/blog/${post.slug}`, post.title)} />
+      <StructuredData data={createSpeakableSchema(`https://planbotai.app/blog/${post.slug}/`, post.title)} />
       <StructuredData data={createBreadcrumbSchema([
         { name: 'Home', item: 'https://planbotai.app/' },
-        { name: 'Blog', item: 'https://planbotai.app/blog' },
-        { name: post.title, item: `https://planbotai.app/blog/${post.slug}` }
+        { name: 'Blog', item: 'https://planbotai.app/blog/' },
+        { name: post.title, item: `https://planbotai.app/blog/${post.slug}/` }
       ])} />
       {post.howToSteps && post.howToSteps.length > 0 && (
         <StructuredData data={createHowToSchema({

@@ -3,6 +3,15 @@ import type { Metadata } from 'next';
 export const SITE_URL = 'https://planbotai.app';
 export const SITE_NAME = 'PlanBot';
 
+export function formatUrl(pathOrUrl: string): string {
+  if (!pathOrUrl || pathOrUrl === '/') return `${SITE_URL}/`;
+  let url = pathOrUrl.startsWith('http') ? pathOrUrl : `${SITE_URL}${pathOrUrl.startsWith('/') ? pathOrUrl : `/${pathOrUrl}`}`;
+  if (!url.endsWith('/')) {
+    url += '/';
+  }
+  return url;
+}
+
 export function createMetadata({
   title,
   description,
@@ -16,7 +25,7 @@ export function createMetadata({
   image?: string;
   type?: string;
 }): Metadata {
-  const url = `${SITE_URL}${path}`;
+  const url = formatUrl(path);
   return {
     title,
     description,
@@ -209,7 +218,7 @@ export function createArticleSchema({
     author: {
       '@type': 'Person',
       name: author.name,
-      url: author.url || `${SITE_URL}/authors/${author.name.toLowerCase().replace(/ /g, '-')}`,
+      url: author.url || formatUrl(`/authors/${author.name.toLowerCase().replace(/ /g, '-')}`),
     },
     publisher: {
       '@type': 'Organization',
@@ -217,7 +226,7 @@ export function createArticleSchema({
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `${SITE_URL}/blog/${slug}`,
+      '@id': formatUrl(`/blog/${slug}`),
     },
   };
 }
@@ -230,7 +239,7 @@ export function createBreadcrumbSchema(items: { name: string; item: string }[]) 
       '@type': 'ListItem',
       position: index + 1,
       name: breadcrumb.name,
-      item: breadcrumb.item,
+      item: formatUrl(breadcrumb.item),
     })),
   };
 }
@@ -241,7 +250,7 @@ export function createWebPageSchema(title: string, description: string, url: str
     '@type': 'WebPage',
     name: title,
     description: description,
-    url: url,
+    url: formatUrl(url),
   };
 }
 
@@ -257,7 +266,7 @@ export function createSpeakableSchema(url: string, name: string) {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     name: name,
-    url: url,
+    url: formatUrl(url),
     speakable: {
       '@type': 'SpeakableSpecification',
       cssSelector: ['.aeo-answer', '.tl-dr', 'h1', 'h2', 'h3', 'strong'],
