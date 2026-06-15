@@ -18,10 +18,11 @@ const footerLinks = {
     { href: '/privacy-policy', label: 'Privacy Policy' },
     { href: '/terms', label: 'Terms of Service' },
     { href: '/refund-policy', label: 'Refund Policy' },
+    { href: '/account-deletion', label: 'Account Deletion' },
   ],
   social: [
     { href: 'https://whatsapp.com/channel/0029Vb7U0vR8aKvH1quo1f3G', label: 'WhatsApp', external: true },
-    { href: 'https://www.instagram.com/planbotai?igsh=MWwyMjJtNGo2NHEzZQ==', label: 'Instagram', external: true },
+    { href: 'https://www.instagram.com/planbotai?igsh=bXplYm92dG13c3Jq', label: 'Instagram', external: true },
   ],
 };
 

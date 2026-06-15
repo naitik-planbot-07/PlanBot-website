@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     },
   },
   other: {
-    'msvalidate.01': 'BING_WEBMASTER_ID_PLACEHOLDER', // Phase 3 Fix #18: Bing Webmaster verification
+    'msvalidate.01': 'E3DBF400C81A3D855B242EBA78D63F37', // Phase 3 Fix #18: Bing Webmaster verification
   },
   robots: {
     index: true,
@@ -135,7 +135,7 @@ export default function RootLayout({
                 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
                 t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
                 y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "CLARITY_PROJECT_ID_PLACEHOLDER");
+            })(window, document, "clarity", "script", "x7grxn17q");
           `}
         </Script>
       </body>

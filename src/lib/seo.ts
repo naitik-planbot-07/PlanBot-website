@@ -84,8 +84,8 @@ export const mobileAppSchema = {
     'PlanBot is an AI-powered daily planner app for Android that creates personalized plans using advanced AI technology. Perfect for students, professionals, and athletes.',
   aggregateRating: {
     '@type': 'AggregateRating',
-    ratingValue: '4.8',
-    ratingCount: '342',
+    ratingValue: '5.0',
+    ratingCount: '10',
   },
   author: {
     '@type': 'Organization',
@@ -104,21 +104,8 @@ export const mobileAppSchema = {
     'Time Management Assistant',
     'Gamified Productivity',
   ],
-  review: [
-    {
-      '@type': 'Review',
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: '5',
-        bestRating: '5',
-      },
-      author: {
-        '@type': 'Person',
-        name: 'Android User',
-      },
-      reviewBody: 'The AI planning feature is amazing and saves me hours of scheduling. Best study planner app.',
-    },
-  ],
+  // FIX: Removed fabricated review — schema.org reviews must be real
+  // TODO: Add verified user reviews when collected through a proper review system
 };
 
 export const organizationSchema = {
@@ -139,10 +126,7 @@ export const organizationSchema = {
     jobTitle: 'Founder & CEO',
     url: `${SITE_URL}/about`,
     sameAs: [
-      'https://www.instagram.com/planbotai',
-      // TODO: Add LinkedIn, GitHub, Crunchbase URLs when available
-      // 'https://www.linkedin.com/in/naitikbaldaniya',
-      // 'https://github.com/naitikbaldaniya',
+      'https://www.instagram.com/planbotai?igsh=bXplYm92dG13c3Jq',
     ],
     description: 'Productivity expert and software developer dedicated to building AI-driven scheduling and focus systems.',
     knowsAbout: [
@@ -166,7 +150,7 @@ export const organizationSchema = {
   },
   sameAs: [
     'https://whatsapp.com/channel/0029Vb7U0vR8aKvH1quo1f3G',
-    'https://www.instagram.com/planbotai',
+    'https://www.instagram.com/planbotai?igsh=bXplYm92dG13c3Jq',
     'https://play.google.com/store/apps/details?id=cpm.planbot',
   ],
   contactPoint: {

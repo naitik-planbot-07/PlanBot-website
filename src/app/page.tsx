@@ -122,6 +122,14 @@ export default function HomePage() {
             <span className="hidden md:inline">•</span>
             <span>⭐ Free to Start</span>
           </div>
+          {/* ── Social Proof — FIX: Added visible trust signals for AI crawlers ── */}
+          <div className="flex flex-wrap items-center justify-center gap-6 mt-6 text-sm text-text-dim">
+            <span>⭐ 5.0 Rated on Play Store</span>
+            <span className="hidden md:inline">•</span>
+            <span>📱 Available on Google Play</span>
+            <span className="hidden md:inline">•</span>
+            <span>🇮🇳 Made in India</span>
+          </div>
         </div>
       </header>
 
@@ -271,7 +279,10 @@ export default function HomePage() {
       {/* ── SEO FAQ Section ── */}
       <section className="py-16 px-4 sm:px-6" aria-labelledby="faq-heading">
         <div className="max-w-3xl mx-auto">
-          <h2 id="faq-heading" className="sr-only">Frequently Asked Questions about PlanBot AI Planner</h2>
+          <h2 id="faq-heading" className="section-heading text-center mb-8">
+            Frequently Asked <span className="text-gradient">Questions</span>
+          </h2>
+          {/* FIX: Made FAQ heading visible — was sr-only, invisible to AI crawlers */}
           <div className="space-y-3">
             {homeFAQs.map((faq, i) => (
               <details key={i} className="group border border-glass-border bg-surface/30 rounded-lg transition-colors hover:bg-surface/50">

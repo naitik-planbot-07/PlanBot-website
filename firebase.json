@@ -13,23 +13,7 @@
         "destination": "/refer/index.html"
       }
     ],
-    "redirects": [
-      {
-        "source": "/privacy-policy",
-        "destination": "https://plannexttech-cmd.github.io/planbot07/PlanBot-Privacy-Policy.html",
-        "type": 301
-      },
-      {
-        "source": "/terms",
-        "destination": "https://plannexttech-cmd.github.io/planbot07/PlanBot-terms.html",
-        "type": 301
-      },
-      {
-        "source": "/refund-policy",
-        "destination": "https://plannexttech-cmd.github.io/planbot07/PlanBot-refund.html",
-        "type": 301
-      }
-    ],
+
     "headers": [
       {
         "source": "/sitemap.xml",

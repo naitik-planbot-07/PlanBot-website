@@ -11,6 +11,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/contact/`, lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.6 },
     { url: `${SITE_URL}/blog/`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.8 },
     { url: `${SITE_URL}/blog/ai-planner-guide/`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.95 },
+    { url: `${SITE_URL}/privacy-policy/`, lastModified: new Date(), changeFrequency: 'yearly' as const, priority: 0.3 },
+    { url: `${SITE_URL}/terms/`, lastModified: new Date(), changeFrequency: 'yearly' as const, priority: 0.3 },
+    { url: `${SITE_URL}/refund-policy/`, lastModified: new Date(), changeFrequency: 'yearly' as const, priority: 0.3 },
+    { url: `${SITE_URL}/account-deletion/`, lastModified: new Date(), changeFrequency: 'yearly' as const, priority: 0.3 },
   ];
 
   const blogPosts = getAllPosts();

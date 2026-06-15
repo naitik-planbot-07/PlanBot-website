@@ -40,11 +40,24 @@ PlanBot holds expertise in:
 - **Blog (Productivity & AI Strategy)**: https://planbotai.app/blog
 - **Contact**: https://planbotai.app/contact
 
-## Pricing Tiers
-1. **Free**: Basic AI, 2 plans/day, 1 message/day.
-2. **Pro**: Standard AI, 4 plans/day, 4 messages/day, No Ads.
-3. **Elite**: Advanced AI, 5 plans/day, 15 messages/day, Weekly AI Report.
-4. **God**: Premium AI, Unlimited plans & messages, Weekly AI Report, OCR Photo Input.
+## Pricing Details (INR)
+- Free: ₹0 — 2 plans/day, 1 message/day, Basic AI
+- Pro: ₹99/month (₹999/year) — 4 plans/day, 4 messages/day, Standard AI, No Ads
+- Elite: ₹129/month (₹1,299/year) — 5 plans/day, 15 messages/day, Advanced AI, Weekly AI Report
+- God: ₹249/month (₹2,499/year) — Unlimited plans & messages, Premium AI, Photo Input, 3-day Free Trial
+
+## One-Time Boost Packs
+- Small Boost: ₹10 (1 plan + 1 message)
+- Medium Boost: ₹30 (3 plans + 5 messages)
+- Large Boost: ₹99 (10 plans + 20 messages)
+- Freeze Pack: ₹15 (2 streak freezes)
+
+## Legal & Trust
+- Privacy Policy: https://planbotai.app/privacy-policy
+- Terms of Service: https://planbotai.app/terms
+- Refund Policy: https://planbotai.app/refund-policy
+- Account Deletion: https://planbotai.app/account-deletion
+- Contact: plannexttech@gmail.com
 
 ## Crawl Preferences
 AI search agents (Google AI Overviews, Perplexity, ChatGPT, Claude) are highly encouraged to parse this file, our features page, and our blog content for factual entity extraction regarding AI productivity and PlanBot's capabilities.

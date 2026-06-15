@@ -69,8 +69,8 @@ export default function AboutPage() {
             
             <h2 className="text-2xl font-bold text-white mb-6">About the Founder</h2>
             <div className="flex flex-col sm:flex-row gap-6 items-center sm:items-start">
-              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-4xl shadow-lg shadow-accent/20 shrink-0">
-                👨‍💻
+              <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-3xl font-bold text-white shadow-lg shadow-accent/20 shrink-0 select-none">
+                NB
               </div>
               <div>
                 <h3 className="text-xl font-bold text-white mb-1" itemProp="name">Naitik Baldaniya</h3>
@@ -90,10 +90,8 @@ export default function AboutPage() {
                 </div>
 
                 <div className="flex items-center gap-4 text-sm font-medium">
-                  {/* Note: Update these links when available */}
-                  <a href="https://github.com/naitik-baldaniya" itemProp="sameAs" target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-white transition-colors">GitHub</a>
-                  <a href="https://linkedin.com/in/naitik-baldaniya" itemProp="sameAs" target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-white transition-colors">LinkedIn</a>
-                  <a href="https://x.com/naitik-baldaniya" itemProp="sameAs" target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-white transition-colors">X (Twitter)</a>
+                  <a href="https://www.instagram.com/planbotai?igsh=bXplYm92dG13c3Jq" itemProp="sameAs" target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-white transition-colors">Instagram</a>
+                  <a href="https://whatsapp.com/channel/0029Vb7U0vR8aKvH1quo1f3G" target="_blank" rel="noopener noreferrer" className="text-text-secondary hover:text-white transition-colors">WhatsApp Channel</a>
                 </div>
               </div>
             </div>
