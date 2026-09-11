@@ -1,0 +1,175 @@
+{
+  "summary": {
+    "domain": "planbotai.app",
+    "audit_timestamp": "2026-08-21T14:43:00+05:30",
+    "health_score": 94,
+    "business_type": "SaaS / Mobile Productivity App",
+    "top_findings": [
+      {
+        "title": "Clean Technical Infrastructure & Indexing",
+        "severity": "Info",
+        "detail": "81 URLs verified in sitemap.xml with 0 404s, clean robots.txt allowing 14 AI bots, and strict HSTS/Security headers."
+      },
+      {
+        "title": "Multi-Schema Structured Data Suite",
+        "severity": "Info",
+        "detail": "8 valid JSON-LD schema blocks on homepage including SoftwareApplication, Organization with knowsAbout entity clustering, and Speakable."
+      },
+      {
+        "title": "Speculation Rules Optimization Opportunity",
+        "severity": "Low",
+        "detail": "Implement Speculation Rules API (<script type='speculationrules'>) to prerender /pricing and /features on mouse hover for instant navigations."
+      },
+      {
+        "title": "AI Pattern Refinement in Copy",
+        "severity": "Low",
+        "detail": "Replace minor generic buzzwords (e.g., 'cutting-edge') with specific neural/algorithmic feature descriptions for E-E-A-T purity."
+      }
+    ],
+    "quick_wins": [
+      "Add Speculation Rules for top funnel routes (/pricing, /tools/daily-schedule-generator)",
+      "Set fetchpriority='high' on Hero logo/brand elements",
+      "Expand interactive tools interlinking in blog article conclusion CTAs"
+    ]
+  },
+  "categories": [
+    {
+      "name": "Technical SEO",
+      "weight": "22%",
+      "score": 96,
+      "what_works": [
+        "200 OK responses with clean non-trailing-slash canonical URLs",
+        "Strict HSTS with preload, DENY framing, nosniff, strict-origin referrer policy",
+        "Comprehensive robots.txt with query parameter disallow (Disallow: /*?) and sitemap link",
+        "81 static routes cleanly generated with Next.js 14 SSG and Firebase cleanUrls"
+      ],
+      "findings": [
+        {
+          "title": "Speculation Rules API Prefetching",
+          "severity": "Low",
+          "description": "Modern browsers support Speculation Rules for zero-latency page transitions.",
+          "recommendation": "Add <script type='speculationrules'> targeting high-conversion pages."
+        }
+      ]
+    },
+    {
+      "name": "Content Quality & E-E-A-T",
+      "weight": "23%",
+      "score": 93,
+      "what_works": [
+        "1.0 Information density score on content quality analysis with 0 filler",
+        "Detailed founder E-E-A-T profile for Naitik Baldaniya with dedicated author page",
+        "11 topical authority markers in Schema knowsAbout array",
+        "55 niche-targeted exam and productivity MDX blog articles"
+      ],
+      "findings": [
+        {
+          "title": "Minor AI Buzzword Refinement",
+          "severity": "Low",
+          "description": "Quality scorer flagged single occurrence of 'cutting-edge' on homepage copy.",
+          "recommendation": "Substitute with concrete technical descriptions like 'multi-tier AI planning algorithms'."
+        }
+      ]
+    },
+    {
+      "name": "On-Page SEO",
+      "weight": "20%",
+      "score": 95,
+      "what_works": [
+        "Title tags strictly optimized under 60 characters across all pages and blog posts",
+        "Meta descriptions constrained between 135-155 characters for 0 SERP truncation",
+        "Clean semantic heading hierarchy (H1 -> H2 -> H3)",
+        "Internal cross-link clusters connecting Homepage, Tools, Compare, and Blog"
+      ],
+      "findings": []
+    },
+    {
+      "name": "Schema / Structured Data",
+      "weight": "10%",
+      "score": 96,
+      "what_works": [
+        "8 validated JSON-LD schema blocks on Homepage",
+        "SoftwareApplication schema with ₹0 Offer and Google Play installUrl",
+        "Dynamic FAQPage and BreadcrumbList injection on blog articles",
+        "SpeakableSpecification targeting Quick Answer blocks (.aeo-answer, .tl-dr)"
+      ],
+      "findings": [
+        {
+          "title": "Google FAQ Rich Snippet Deprecation Context",
+          "severity": "Info",
+          "description": "Google retired SERP FAQ accordions on May 7, 2026 for general sites. Schema remains valuable for LLM knowledge extraction.",
+          "recommendation": "Keep FAQPage schema for AI crawlers; no changes required."
+        }
+      ]
+    },
+    {
+      "name": "Performance (Core Web Vitals)",
+      "weight": "10%",
+      "score": 92,
+      "what_works": [
+        "Static HTML pre-rendering ensures sub-50ms TTFB on Firebase Global CDN",
+        "No heavy analytics bloat; lightweight GA4 + Clarity integration",
+        "0 layout shift killers, 0 bfcache blockers"
+      ],
+      "findings": [
+        {
+          "title": "LCP Priority Hinting",
+          "severity": "Low",
+          "description": "Hero images can be accelerated by explicitly marking fetchpriority='high'.",
+          "recommendation": "Ensure above-the-fold logo has fetchpriority='high'."
+        }
+      ]
+    },
+    {
+      "name": "AI Search Readiness (GEO & AEO)",
+      "weight": "10%",
+      "score": 98,
+      "what_works": [
+        "Explicit allow rules for 14 AI crawlers in robots.txt",
+        "Structured /llms.txt, /llm.txt, and /llms-full.txt machine-readable documentation",
+        "Dedicated Quick Answer (.aeo-answer) blocks for Perplexity & ChatGPT extraction",
+        "100/100 Agent UX Accessibility score (agent_ux_check.py)"
+      ],
+      "findings": []
+    },
+    {
+      "name": "Images & Visual",
+      "weight": "5%",
+      "score": 94,
+      "what_works": [
+        "Multi-viewport responsive layouts verified across Desktop, Laptop, Tablet, and Mobile",
+        "SVG vector graphics for Tier Progression Roadmap flowcharts",
+        "Alt attributes on all functional and content images"
+      ],
+      "findings": []
+    }
+  ],
+  "action_plan": {
+    "phases": [
+      {
+        "name": "Phase 1: Performance & Micro-Optimizations",
+        "timeframe": "Week 1",
+        "items": [
+          "Inject Speculation Rules API for instant prefetch on /pricing and /features links",
+          "Mark hero images with fetchpriority='high' for optimal LCP paint time"
+        ]
+      },
+      {
+        "name": "Phase 2: Content & Authority Acceleration",
+        "timeframe": "Weeks 2-3",
+        "items": [
+          "Audit blog articles for any residual AI generic idioms to maintain 95+ quality score",
+          "Add bidirectional internal links between Comparison Hub (/compare) and Exam Study Guides"
+        ]
+      },
+      {
+        "name": "Phase 3: Monitoring & Drift Tracking",
+        "timeframe": "Ongoing",
+        "items": [
+          "Run weekly claude-seo drift compare checks to ensure no regressions in titles or metadata",
+          "Monitor Bing Webmaster Tools and IndexNow automated pings on every production deploy"
+        ]
+      }
+    ]
+  }
+}

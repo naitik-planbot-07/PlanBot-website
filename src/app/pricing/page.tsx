@@ -86,7 +86,7 @@ const plans = [
     yearlyTotal: '₹1,299/yr',
     description: 'The SMART Choice. Best balance of time saved.',
     topBadge: 'MOST POPULAR',
-    valueBadge: 'Save ~9.2 hrs/mo (Based on user time-tracking data*)',
+    valueBadge: 'Save ~30-45 min every day (estimate)',
     buttonText: 'Get Elite →',
     buttonClass: 'bg-[#1E90FF] hover:bg-blue-600 text-white',
     cardClass: 'border-[#1E90FF]/50 shadow-[0_0_30px_rgba(30,144,255,0.15)]',
@@ -390,7 +390,7 @@ export default function PricingPage() {
         </p>
 
         <p className="text-center text-xs text-[#A0AEC0]/70 max-w-2xl mx-auto mb-8">
-          *Methodology Note: The &quot;9.2 hours/month saved&quot; metric is derived from an internal survey of 1,200 active PlanBot users conducted in August 2026. Users reported spending an average of 18.5 minutes daily on manual scheduling and task reorganization before PlanBot, which was reduced to ~0.1 minutes using our AI scheduler.
+          *Time-savings estimate: assumes ~30-45 minutes of manual daily planning, which is typical when juggling tasks across multiple apps. Individual results vary with usage. PlanBot is a young app with a growing user base - we will publish real usage statistics here as they accumulate.
         </p>
 
         <div className="text-center">

@@ -17,11 +17,6 @@
           "type": 301
         },
         {
-          "source": "/blog/planbot-vs-free-productivity-apps",
-          "destination": "/blog/planbot-vs-google-calendar",
-          "type": 301
-        },
-        {
           "source": "/planbot-vs-notion",
           "destination": "/compare/planbot-vs-notion",
           "type": 301

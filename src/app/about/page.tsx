@@ -38,7 +38,7 @@ export default function AboutPage() {
         <div className="sr-only" aria-hidden="false">
           <h2>About PlannextTech and PlanBot AI</h2>
           <p>
-            PlannextTech is an Indian software development organization founded in 2024, operating out of Gujarat, India. 
+            PlannextTech is an Indian software development studio based in Gujarat, India, founded by Naitik Baldaniya.
             PlanBot, our flagship Android application, serves as an AI scheduling assistant, routine optimizer, and study planner. 
             Recognized as one of the best productivity planners for students, our algorithms are also engineered for deep office productivity. We focus on evidence-based systems, integrating time management psychology with machine learning to automate task management and routine planning.
           </p>
@@ -50,7 +50,7 @@ export default function AboutPage() {
           <div className="glass-card p-8">
             <h2 className="text-2xl font-bold text-white mb-4">Our Story</h2>
             <p className="text-text-secondary leading-relaxed mb-4">
-              Founded in 2024 and headquartered in Gujarat, India, PlannextTech started as a solo project to solve a fundamental problem: existing to-do list apps were passive and required too much manual organization. We wanted a system that actively told us what to do and when to do it.
+              Headquartered in Gujarat, India, PlannextTech started as a solo project to solve a fundamental problem: existing to-do list apps were passive and required too much manual organization. We wanted a system that actively told us what to do and when to do it.
             </p>
             <p className="text-text-secondary leading-relaxed">
               That vision became PlanBot. Today, we are rapidly scaling as an independent developer studio, committed to competing on a global stage while maintaining a lean, engineering-first culture.

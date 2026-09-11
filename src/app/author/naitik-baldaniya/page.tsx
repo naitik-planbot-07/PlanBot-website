@@ -40,13 +40,13 @@ export default function AuthorPage() {
             <p className="text-lg md:text-xl font-medium text-accent mb-4">Founder & CEO, PlanBot</p>
             <div className="text-text-secondary mb-6 leading-relaxed">
               <p className="mb-4">
-                Naitik is a productivity systems architect and software developer with over 5 years of experience building high-performance applications. He founded PlanBot out of a personal necessity to overcome severe procrastination and fragmented study schedules during his own rigorous academic preparation.
+                Naitik is a productivity systems architect and software developer with experience building high-performance applications. He founded PlanBot out of a personal necessity to overcome severe procrastination and fragmented study schedules during his own rigorous academic preparation.
               </p>
               <p className="mb-4">
                 With a deep background in algorithmic time-blocking and behavioral psychology, his work centers on replacing manual, static to-do lists with dynamic, AI-driven focus engines. Prior to building PlanBot, Naitik developed several specialized tools for students and professionals to automate repetitive workflows.
               </p>
               <p>
-                His expertise spans <strong>AI Scheduling Algorithms</strong>, <strong>Spaced Repetition Systems (SRS)</strong>, and <strong>Diurnal Energy Optimization</strong>. His mission is to democratize elite-level executive functioning for the millions of students and professionals relying on PlanBot today.
+                His expertise spans <strong>AI Scheduling Algorithms</strong>, <strong>Spaced Repetition Systems (SRS)</strong>, and <strong>Diurnal Energy Optimization</strong>. His mission is to democratize elite-level executive functioning for the students and professionals relying on PlanBot today.
               </p>
             </div>
             <div className="mt-6">

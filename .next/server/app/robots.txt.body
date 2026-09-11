@@ -1,7 +1,22 @@
 User-Agent: *
 Allow: /
+Allow: /app-ads.txt
+Allow: /ads.txt
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /llm.txt
 Disallow: /api/
 Disallow: /_next/
+Disallow: /*?
+Disallow: /*.txt
+
+User-Agent: Mediapartners-Google
+Allow: /
+Disallow: /api/
+
+User-Agent: Google-Apps-Ads-Txt
+Allow: /
+Disallow: /api/
 
 User-Agent: GPTBot
 Allow: /
@@ -59,5 +74,4 @@ User-Agent: Bytespider
 Allow: /
 Disallow: /api/
 
-Host: https://planbotai.app
 Sitemap: https://planbotai.app/sitemap.xml

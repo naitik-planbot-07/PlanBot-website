@@ -124,7 +124,7 @@ export default function HomePage() {
           </div>
           {/* ── Social Proof — FIX: Added visible trust signals for AI crawlers ── */}
           <div className="flex flex-wrap items-center justify-center gap-6 mt-6 text-sm text-text-dim">
-            <span>⭐ 10,000+ Plans Generated</span>
+            <span>⭐ AI Plans Generated Daily</span>
             <span className="hidden md:inline">•</span>
             <span>📱 Available on Google Play</span>
             <span className="hidden md:inline">•</span>
@@ -259,8 +259,8 @@ export default function HomePage() {
           </div>
 
           <div className="text-center mt-12 text-sm text-text-secondary">
-            🔥 <span className="text-white font-bold">10,000+ AI Schedules Generated</span> by students & professionals worldwide. 
-            <br/><span className="text-xs text-text-dim mt-2 block">*Metric based on internal PlanBot usage data as of August 2026. Names in testimonials have been abbreviated for privacy.</span>
+            🔥 <span className="text-white font-bold">AI Schedules Generated Every Morning</span> by students & professionals worldwide.
+            <br/><span className="text-xs text-text-dim mt-2 block">Names in testimonials have been abbreviated for privacy.</span>
           </div>
         </div>
       </section>

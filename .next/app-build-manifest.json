@@ -1,125 +1,296 @@
 {
   "pages": {
     "/not-found": [
-      "static/chunks/webpack-8c2a7396920e3c54.js",
-      "static/chunks/fd9d1056-87da80e0c187477b.js",
-      "static/chunks/117-010855622abcac0d.js",
-      "static/chunks/main-app-867a9816f0a6cea0.js",
-      "static/chunks/972-773d843e15e97eb0.js",
-      "static/chunks/app/not-found-e5d518614823139b.js"
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/2972-d95e9c69b7558faa.js",
+      "static/chunks/app/not-found-2e383fc3b636fc02.js"
     ],
     "/_not-found/page": [
-      "static/chunks/webpack-8c2a7396920e3c54.js",
-      "static/chunks/fd9d1056-87da80e0c187477b.js",
-      "static/chunks/117-010855622abcac0d.js",
-      "static/chunks/main-app-867a9816f0a6cea0.js",
-      "static/chunks/app/_not-found/page-410998402ad020fe.js"
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/app/_not-found/page-9b02fafe9c870ee1.js"
     ],
     "/layout": [
-      "static/chunks/webpack-8c2a7396920e3c54.js",
-      "static/chunks/fd9d1056-87da80e0c187477b.js",
-      "static/chunks/117-010855622abcac0d.js",
-      "static/chunks/main-app-867a9816f0a6cea0.js",
-      "static/css/8eb534bb8b0bae7f.css",
-      "static/chunks/972-773d843e15e97eb0.js",
-      "static/chunks/878-548dbe8d98686f6b.js",
-      "static/chunks/app/layout-b5daf1e8383ec1ed.js"
-    ],
-    "/about/page": [
-      "static/chunks/webpack-8c2a7396920e3c54.js",
-      "static/chunks/fd9d1056-87da80e0c187477b.js",
-      "static/chunks/117-010855622abcac0d.js",
-      "static/chunks/main-app-867a9816f0a6cea0.js",
-      "static/chunks/app/about/page-c98e8a384834f0e9.js"
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/css/840c9e524dfff564.css",
+      "static/chunks/2972-d95e9c69b7558faa.js",
+      "static/chunks/3786-fab73365fad389a1.js",
+      "static/chunks/5878-ec57f0a8888c976a.js",
+      "static/chunks/app/layout-57c5a70df1b06389.js"
     ],
     "/account-deletion/page": [
-      "static/chunks/webpack-8c2a7396920e3c54.js",
-      "static/chunks/fd9d1056-87da80e0c187477b.js",
-      "static/chunks/117-010855622abcac0d.js",
-      "static/chunks/main-app-867a9816f0a6cea0.js",
-      "static/chunks/app/account-deletion/page-c77a74a39577c7e4.js"
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/app/account-deletion/page-3cfe7d4d8ab2c356.js"
     ],
     "/blog/[slug]/page": [
-      "static/chunks/webpack-8c2a7396920e3c54.js",
-      "static/chunks/fd9d1056-87da80e0c187477b.js",
-      "static/chunks/117-010855622abcac0d.js",
-      "static/chunks/main-app-867a9816f0a6cea0.js",
-      "static/chunks/972-773d843e15e97eb0.js",
-      "static/chunks/878-548dbe8d98686f6b.js",
-      "static/chunks/app/blog/[slug]/page-53195a617336dffb.js"
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/d8b2f613-ba2543e36ffb5aa3.js",
+      "static/chunks/2972-d95e9c69b7558faa.js",
+      "static/chunks/3786-fab73365fad389a1.js",
+      "static/chunks/5878-ec57f0a8888c976a.js",
+      "static/chunks/3119-585da0b99e9e01b6.js",
+      "static/chunks/app/blog/[slug]/page-ff29d001efa16ed1.js"
     ],
-    "/blog/ai-planner-guide/page": [
-      "static/chunks/webpack-8c2a7396920e3c54.js",
-      "static/chunks/fd9d1056-87da80e0c187477b.js",
-      "static/chunks/117-010855622abcac0d.js",
-      "static/chunks/main-app-867a9816f0a6cea0.js",
-      "static/chunks/972-773d843e15e97eb0.js",
-      "static/chunks/app/blog/ai-planner-guide/page-781f35ecad751b34.js"
+    "/author/naitik-baldaniya/page": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/2972-d95e9c69b7558faa.js",
+      "static/chunks/5878-ec57f0a8888c976a.js",
+      "static/chunks/app/author/naitik-baldaniya/page-7d5724dea546399a.js"
     ],
-    "/privacy-policy/page": [
-      "static/chunks/webpack-8c2a7396920e3c54.js",
-      "static/chunks/fd9d1056-87da80e0c187477b.js",
-      "static/chunks/117-010855622abcac0d.js",
-      "static/chunks/main-app-867a9816f0a6cea0.js",
-      "static/chunks/app/privacy-policy/page-41c4704474e57a4f.js"
-    ],
-    "/refund-policy/page": [
-      "static/chunks/webpack-8c2a7396920e3c54.js",
-      "static/chunks/fd9d1056-87da80e0c187477b.js",
-      "static/chunks/117-010855622abcac0d.js",
-      "static/chunks/main-app-867a9816f0a6cea0.js",
-      "static/chunks/app/refund-policy/page-f515c1ea79b7621b.js"
-    ],
-    "/terms/page": [
-      "static/chunks/webpack-8c2a7396920e3c54.js",
-      "static/chunks/fd9d1056-87da80e0c187477b.js",
-      "static/chunks/117-010855622abcac0d.js",
-      "static/chunks/main-app-867a9816f0a6cea0.js",
-      "static/chunks/app/terms/page-0913f1da88fd153b.js"
+    "/about/page": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/3786-fab73365fad389a1.js",
+      "static/chunks/app/about/page-475662e016a46575.js"
     ],
     "/blog/page": [
-      "static/chunks/webpack-8c2a7396920e3c54.js",
-      "static/chunks/fd9d1056-87da80e0c187477b.js",
-      "static/chunks/117-010855622abcac0d.js",
-      "static/chunks/main-app-867a9816f0a6cea0.js",
-      "static/chunks/972-773d843e15e97eb0.js",
-      "static/chunks/app/blog/page-c66caaf95e4309f1.js"
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/2972-d95e9c69b7558faa.js",
+      "static/chunks/app/blog/page-916028e97b4502c0.js"
+    ],
+    "/compare/planbot-vs-google-calendar/page": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/2972-d95e9c69b7558faa.js",
+      "static/chunks/app/compare/planbot-vs-google-calendar/page-7e1d859d85af7d88.js"
+    ],
+    "/compare/planbot-vs-motion/page": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/2972-d95e9c69b7558faa.js",
+      "static/chunks/app/compare/planbot-vs-motion/page-f20c6e0c70e191a4.js"
+    ],
+    "/compare/page": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/2972-d95e9c69b7558faa.js",
+      "static/chunks/app/compare/page-85e85739ae63f0f2.js"
+    ],
+    "/compare/planbot-vs-notion/page": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/2972-d95e9c69b7558faa.js",
+      "static/chunks/app/compare/planbot-vs-notion/page-f7be15995216b47e.js"
     ],
     "/contact/page": [
-      "static/chunks/webpack-8c2a7396920e3c54.js",
-      "static/chunks/fd9d1056-87da80e0c187477b.js",
-      "static/chunks/117-010855622abcac0d.js",
-      "static/chunks/main-app-867a9816f0a6cea0.js",
-      "static/chunks/app/contact/page-47007da92ed8a4f9.js"
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/app/contact/page-adf66a25d900956e.js"
+    ],
+    "/compare/planbot-vs-ticktick/page": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/2972-d95e9c69b7558faa.js",
+      "static/chunks/app/compare/planbot-vs-ticktick/page-850f07dfbd76eee0.js"
+    ],
+    "/compare/planbot-vs-todoist/page": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/2972-d95e9c69b7558faa.js",
+      "static/chunks/app/compare/planbot-vs-todoist/page-54d3a93d167ef5b8.js"
     ],
     "/features/page": [
-      "static/chunks/webpack-8c2a7396920e3c54.js",
-      "static/chunks/fd9d1056-87da80e0c187477b.js",
-      "static/chunks/117-010855622abcac0d.js",
-      "static/chunks/main-app-867a9816f0a6cea0.js",
-      "static/chunks/app/features/page-7b2f2425cdc738f1.js"
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/3786-fab73365fad389a1.js",
+      "static/chunks/4447-04cc1f76d0f70798.js",
+      "static/chunks/app/features/page-fc7c279c7fd6ab1a.js"
+    ],
+    "/refund-policy/page": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/app/refund-policy/page-93da408b8700cbc1.js"
+    ],
+    "/blog/ai-planner-guide/page": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/2972-d95e9c69b7558faa.js",
+      "static/chunks/app/blog/ai-planner-guide/page-df2ac7ebbe678630.js"
+    ],
+    "/privacy-policy/page": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/app/privacy-policy/page-11856fbaca53e193.js"
+    ],
+    "/terms/page": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/2972-d95e9c69b7558faa.js",
+      "static/chunks/app/terms/page-db82f2009c263434.js"
+    ],
+    "/use-cases/ai-planner-for-students-exams/page": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/2972-d95e9c69b7558faa.js",
+      "static/chunks/app/use-cases/ai-planner-for-students-exams/page-7e60f9b35a988328.js"
+    ],
+    "/use-cases/ai-planner-for-adhd-focus/page": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/2972-d95e9c69b7558faa.js",
+      "static/chunks/app/use-cases/ai-planner-for-adhd-focus/page-740b1c7821faf47a.js"
     ],
     "/page": [
-      "static/chunks/webpack-8c2a7396920e3c54.js",
-      "static/chunks/fd9d1056-87da80e0c187477b.js",
-      "static/chunks/117-010855622abcac0d.js",
-      "static/chunks/main-app-867a9816f0a6cea0.js",
-      "static/chunks/972-773d843e15e97eb0.js",
-      "static/chunks/app/page-863e750b97cccf72.js"
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/2972-d95e9c69b7558faa.js",
+      "static/chunks/3786-fab73365fad389a1.js",
+      "static/chunks/app/page-25130a730a17396c.js"
+    ],
+    "/tools/page": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/2972-d95e9c69b7558faa.js",
+      "static/chunks/app/tools/page-1655cd6dd7d10e44.js"
+    ],
+    "/use-cases/ai-planner-for-working-professionals/page": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/2972-d95e9c69b7558faa.js",
+      "static/chunks/app/use-cases/ai-planner-for-working-professionals/page-e0dbb0973834e0a3.js"
+    ],
+    "/use-cases/page": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/2972-d95e9c69b7558faa.js",
+      "static/chunks/app/use-cases/page-348184d43f695e1c.js"
+    ],
+    "/tools/pomodoro-focus-calculator/page": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/2972-d95e9c69b7558faa.js",
+      "static/chunks/3786-fab73365fad389a1.js",
+      "static/chunks/app/tools/pomodoro-focus-calculator/page-5ca8f0173ddf8217.js"
+    ],
+    "/tools/pomodoro-focus-calculator/layout": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/app/tools/pomodoro-focus-calculator/layout-e39623be80e6beb4.js"
+    ],
+    "/tools/weather-forecast/page": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/2972-d95e9c69b7558faa.js",
+      "static/chunks/3786-fab73365fad389a1.js",
+      "static/chunks/app/tools/weather-forecast/page-5375adf0dbf21fa4.js"
+    ],
+    "/tools/weather-forecast/layout": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/app/tools/weather-forecast/layout-827a6a18814cce7c.js"
     ],
     "/pricing/page": [
-      "static/chunks/webpack-8c2a7396920e3c54.js",
-      "static/chunks/fd9d1056-87da80e0c187477b.js",
-      "static/chunks/117-010855622abcac0d.js",
-      "static/chunks/main-app-867a9816f0a6cea0.js",
-      "static/chunks/app/pricing/page-74179593d7369d59.js"
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/4447-04cc1f76d0f70798.js",
+      "static/chunks/app/pricing/page-c2fd065798e33a2e.js"
     ],
     "/pricing/layout": [
-      "static/chunks/webpack-8c2a7396920e3c54.js",
-      "static/chunks/fd9d1056-87da80e0c187477b.js",
-      "static/chunks/117-010855622abcac0d.js",
-      "static/chunks/main-app-867a9816f0a6cea0.js",
-      "static/chunks/app/pricing/layout-0ccd64e904461b53.js"
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/app/pricing/layout-ae9a00716c45114c.js"
+    ],
+    "/tools/exam-revision-calculator/page": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/2972-d95e9c69b7558faa.js",
+      "static/chunks/3786-fab73365fad389a1.js",
+      "static/chunks/app/tools/exam-revision-calculator/page-e0d17a77fe3626a0.js"
+    ],
+    "/tools/exam-revision-calculator/layout": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/app/tools/exam-revision-calculator/layout-f556e67530e4fd62.js"
+    ],
+    "/tools/daily-schedule-generator/page": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/2972-d95e9c69b7558faa.js",
+      "static/chunks/3786-fab73365fad389a1.js",
+      "static/chunks/app/tools/daily-schedule-generator/page-3b3277113332bd5f.js"
+    ],
+    "/tools/daily-schedule-generator/layout": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/app/tools/daily-schedule-generator/layout-a88e2ace57918a3b.js"
     ]
   }
 }
