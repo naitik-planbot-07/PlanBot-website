@@ -2,11 +2,14 @@ import type { Metadata } from 'next';
 import { createMetadata, createWebPageSchema, createBreadcrumbSchema } from '@/lib/seo';
 import StructuredData from '@/components/StructuredData';
 
-export const metadata: Metadata = createMetadata({
-  title: 'Privacy Policy — PlanBot',
-  description: 'Privacy Policy for PlanBot. Learn how PlanBot collects, uses, and protects your personal information.',
-  path: '/privacy-policy',
-});
+// GSC Fix (August 2026): noindex on thin legal pages — prevents "Crawled - currently not indexed" waste
+export const metadata: Metadata = {
+  ...createMetadata({
+    title: 'Privacy Policy — PlanBot',
+    description: 'Privacy Policy for PlanBot. Learn how PlanBot collects, uses, and protects your personal information.',
+    path: '/privacy-policy',
+  }),
+  };
 
 export default function PrivacyPolicyPage() {
   return (
@@ -17,7 +20,7 @@ export default function PrivacyPolicyPage() {
         'https://planbotai.app/privacy-policy'
       )} />
       <StructuredData data={createBreadcrumbSchema([
-        { name: 'Home', item: 'https://planbotai.app/' },
+        { name: 'Home', item: 'https://planbotai.app' },
         { name: 'Privacy Policy', item: 'https://planbotai.app/privacy-policy' }
       ])} />
 
@@ -26,11 +29,11 @@ export default function PrivacyPolicyPage() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-center">
             <span className="text-gradient">Privacy</span> Policy
           </h1>
-          <p className="text-text-secondary text-center mb-12">Last Updated: December 21, 2025</p>
+          <p className="text-text-secondary text-center mb-12">Last Updated: September 7, 2026</p>
 
           <div className="glass-card p-8 md:p-12 prose-planbot">
             <div className="aeo-answer mb-8">
-              <p><strong>Your Privacy Matters:</strong> This Privacy Policy explains how PlanBot collects, uses, and protects your personal information.</p>
+              <p><strong>Your Privacy Matters:</strong> This Privacy Policy explains how PlanBot collects, uses, and protects your personal information across our website and Android mobile application.</p>
             </div>
 
             <h2>1. Information We Collect</h2>
@@ -44,11 +47,16 @@ export default function PrivacyPolicyPage() {
             </ul>
 
             <h3>1.2 Automatically Collected Information</h3>
+            {/* Privacy Compliance Update (September 2026): Explicitly disclosed Advertising ID, Firebase Analytics, and Firebase Crashlytics for app improvement and ad delivery */}
+            <p className="mb-4">
+              We collect anonymized diagnostic and usage data to ensure application stability, troubleshoot crashes, optimize user experience, and deliver advertising. This data does NOT include any personal content such as your private study plans, chat prompts, or task notes.
+            </p>
             <ul>
-              <li><strong>Device Information:</strong> Device type, operating system, app version</li>
-              <li><strong>Usage Data:</strong> Features used, time spent, interaction patterns</li>
-              <li><strong>Analytics:</strong> App performance, crash reports (via Firebase Analytics)</li>
-              <li><strong>Authentication:</strong> Firebase Authentication tokens</li>
+              <li><strong>Google Advertising ID (GAID / AAID):</strong> A unique, user-resettable device identifier provided by Google Play Services. This identifier is used to display relevant advertisements, prevent fraudulent ad clicks, cap ad frequency, and measure advertising campaign performance. You can reset or opt-out of personalized advertising at any time through your Android device settings (<em>Settings &gt; Google &gt; Ads</em>).</li>
+              <li><strong>Firebase Analytics &amp; Google Analytics:</strong> Aggregated, non-personally identifiable behavioral metrics including screen views, session duration, feature interactions, and button taps. These insights help us understand how users navigate PlanBot and guide feature improvements.</li>
+              <li><strong>Firebase Crashlytics:</strong> Automated crash logs, stack traces, system diagnostics, and device state indicators (e.g., OS version, device model, free RAM/storage at time of crash). Crashlytics data is utilized solely to identify application crashes, fix bugs promptly, and ensure overall stability across different Android devices.</li>
+              <li><strong>Device &amp; Network Information:</strong> Device model, operating system version, app version, network connection type, and general geographic location (country/city level, non-precise).</li>
+              <li><strong>Authentication Tokens:</strong> Secure tokens managed via Firebase Authentication for account validation.</li>
             </ul>
 
             <h3>1.3 Payment Information</h3>
@@ -62,18 +70,22 @@ export default function PrivacyPolicyPage() {
             <h2>2. How We Use Your Information</h2>
             <p>We use the collected information for the following purposes:</p>
             <ul>
-              <li>To provide, maintain, and improve the App</li>
+              <li>To provide, maintain, and improve the functionality, speed, and reliability of the App</li>
+              <li>To diagnose technical bugs, prevent crashes, and monitor app health via Firebase Crashlytics</li>
+              <li>To understand feature adoption and optimize user workflows via Firebase Analytics and Google Analytics</li>
+              <li>To serve contextual and personalized advertisements on free-tier accounts and measure advertising performance via Google Advertising ID</li>
               <li>To personalize your experience and generate AI-powered plans</li>
-              <li>To communicate with you about updates, offers, and support</li>
-              <li>To monitor and analyze usage and trends</li>
+              <li>To communicate with you about critical updates, security notices, and customer support</li>
               <li>To protect against, identify, and prevent fraud and other illegal activity</li>
             </ul>
 
-            <h2>3. Information Sharing</h2>
-            <p>We do not sell your personal information. We may share information with:</p>
+            <h2>3. Third-Party Service Providers &amp; Advertising</h2>
+            <p>We do not sell your personal data. We partner with reputable third-party service providers to power specific app functions and advertising:</p>
             <ul>
-              <li><strong>Service Providers:</strong> Third-party vendors who help us operate the App (e.g., Firebase, AI models)</li>
-              <li><strong>Legal Compliance:</strong> When required by law or to protect our rights</li>
+              <li><strong>Google Play Services &amp; Google AdMob:</strong> For advertising delivery, ad attribution, and in-app purchase verification.</li>
+              <li><strong>Firebase (Google LLC):</strong> For backend infrastructure, secure authentication, Firebase Analytics, and Firebase Crashlytics error monitoring.</li>
+              <li><strong>Google Analytics &amp; Microsoft Clarity:</strong> For anonymized web and mobile session analytics to improve user interfaces.</li>
+              <li><strong>AI Engine Infrastructure:</strong> For processing scheduling prompts into structured daily time blocks.</li>
             </ul>
 
             <h2>4. Data Security</h2>

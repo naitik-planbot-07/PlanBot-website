@@ -1,63 +1,85 @@
 # PlanBot - AI-Powered Daily Planner
 
-PlanBot is an AI-powered daily planner application designed to help students, professionals, athletes, and entrepreneurs achieve their goals through adaptive planning, intelligent scheduling, and gamification.
+> PlanBot is an AI-powered daily planner for Android that creates personalized daily schedules using advanced AI. Built by PlannextTech for students (JEE, NEET, UPSC), professionals, athletes, and entrepreneurs. Free tier available with daily AI plans; paid tiers unlock more powerful AI models, up to 100 plans history, weekly AI reports, and multi-goal tracking.
 
-## App Summary
-PlanBot transforms static to-do lists into dynamic, AI-generated schedules. By leveraging advanced AI, the app automatically structures a user's day based on their selected persona, time constraints, and priorities. It employs a streak system and freeze charges to encourage consistency without punishing inevitable off-days.
+PlanBot transforms static to-do lists into dynamic, AI-generated schedules. By leveraging multiple AI model tiers (Basic, Standard, Advanced, Premium), the app generates optimized daily plans from natural language goal descriptions. Gamification features include daily streaks, XP points, level progression, and consistency tracking. Elite and God tier users receive personalized weekly AI performance reports.
 
-## Organization
-- Organization Name: PlannextTech
-- Founder: Naitik Baldaniya
-- Mission: PlannextTech builds premium, AI-driven productivity tools for ambitious individuals.
+Key facts:
+- Platform: Android only (Google Play Store: https://play.google.com/store/apps/details?id=cpm.planbot)
+- Pricing: Free / Pro ₹99/mo / Elite ₹129/mo / God ₹249/mo (UPI and credit card support)
+- Developer: PlannextTech, founded by Naitik Baldaniya
+- Country: India (Global availability)
+- Target users: Students (competitive exams), professionals, athletes, entrepreneurs
 
-## Core Features & Capabilities
-1. **AI Plan Generation**: Creates customized daily plans based on user prompts and persona.
-2. **Goal Personas**: Adapts planning logic for Students (JEE/NEET/CAT), Professionals, Athletes, and Entrepreneurs.
-3. **Streak System & Gamification**: Rewards daily adherence with XP, levels, and achievements.
-4. **Weekly AI Reports**: Provides actionable performance analysis every Monday (Elite/God tiers).
-5. **Photo Input (OCR)**: Extracts actionable tasks from photos of handwritten notes or whiteboards (God tier).
-6. **AI Chat Interface**: Allows users to converse with the AI to adjust plans dynamically.
+## Core Pages & Tools
 
-## Use Cases
-- **Student Planning**: AI study plans for competitive exams in India (JEE, NEET, CAT, UPSC, GATE). Structuring study blocks and revision routines.
-- **Task Management**: Breaking down complex professional workflows into manageable daily tasks.
-- **Routine Optimization**: Helping athletes structure training splits alongside recovery blocks.
-- **Time Management**: Minimizing procrastination through intelligent scheduling and gamification.
+- [Homepage](https://planbotai.app): Main landing page with AI scheduler overview and Play Store download CTA
+- [Features Overview](https://planbotai.app/features): Complete breakdown of AI planning, gamification, and AI chat features
+- [Pricing & Tiers](https://planbotai.app/pricing): Free vs Pro vs Elite vs God tier comparison & interactive roadmap
+- [Tools Hub](https://planbotai.app/tools): Free interactive AI calculators
+- [Compare Hub](https://planbotai.app/compare): PlanBot comparison with alternatives
+- [Use Cases Hub](https://planbotai.app/use-cases): Targeted persona planning systems
+- [Blog Hub](https://planbotai.app/blog): Articles and guides
+- [Contact](https://planbotai.app/contact): Get in touch with the PlanBot team
+- [About PlanBot](https://planbotai.app/about): Company background and founder E-E-A-T profile
+- [Author Profile - Naitik Baldaniya](https://planbotai.app/author/naitik-baldaniya): Founder bio and topical expertise
 
-## Topical Authority
-PlanBot holds expertise in:
-- AI Planning & AI Productivity
-- Task Scheduling & Routine Generation
-- Study Planning & Workflow Automation
-- Time Management & Focus Systems
+## Free Interactive Tools
 
-## Important URLs
-- **Canonical Domain**: https://planbotai.app
-- **Homepage**: https://planbotai.app/
-- **Features Breakdown**: https://planbotai.app/features
-- **Pricing & Tiers**: https://planbotai.app/pricing
-- **About Us**: https://planbotai.app/about
-- **Blog (Productivity & AI Strategy)**: https://planbotai.app/blog
-- **Contact**: https://planbotai.app/contact
+- [Free Daily Schedule Generator](https://planbotai.app/tools/daily-schedule-generator): Interactive time-blocking & circadian energy timetable generator
+- [Exam Revision Calculator](https://planbotai.app/tools/exam-revision-calculator): Spaced repetition study schedule generator for JEE, NEET, UPSC, Bank PO
+- [Pomodoro Focus Calculator](https://planbotai.app/tools/pomodoro-focus-calculator): Deep work focus sprint and fatigue projector
+- [Weather Forecast Planner](https://planbotai.app/tools/weather-forecast): 10-day precision weather tracker with AI routine advisories
 
-## Pricing Details (INR)
-- Free: ₹0 — 2 plans/day, 1 message/day, Basic AI
-- Pro: ₹99/month (₹999/year) — 4 plans/day, 4 messages/day, Standard AI, No Ads
-- Elite: ₹129/month (₹1,299/year) — 5 plans/day, 15 messages/day, Advanced AI, Weekly AI Report
-- God: ₹249/month (₹2,499/year) — Unlimited plans & messages, Premium AI, Photo Input, 3-day Free Trial
+## Commercial Comparisons
 
-## One-Time Boost Packs
-- Small Boost: ₹10 (1 plan + 1 message)
-- Medium Boost: ₹30 (3 plans + 5 messages)
-- Large Boost: ₹99 (10 plans + 20 messages)
-- Freeze Pack: ₹15 (2 streak freezes)
+- [PlanBot vs Motion](https://planbotai.app/compare/planbot-vs-motion): Mobile-first Android AI planner (₹99/mo) vs expensive desktop team scheduler ($19-$34/mo)
+- [PlanBot vs Notion](https://planbotai.app/compare/planbot-vs-notion): Automated AI routine generation vs complex manual template setup
+- [PlanBot vs Todoist](https://planbotai.app/compare/planbot-vs-todoist): Dynamic time-blocking vs static checklist rollover guilt
+- [PlanBot vs Google Calendar](https://planbotai.app/compare/planbot-vs-google-calendar): Adaptive dynamic AI scheduling vs rigid manual calendar blocks
+- [PlanBot vs TickTick](https://planbotai.app/compare/planbot-vs-ticktick): Automated routine generation vs basic habit checkboxes
 
-## Legal & Trust
-- Privacy Policy: https://planbotai.app/privacy-policy
-- Terms of Service: https://planbotai.app/terms
-- Refund Policy: https://planbotai.app/refund-policy
-- Account Deletion: https://planbotai.app/account-deletion
-- Contact: plannexttech@gmail.com
+## Persona Use Cases
 
-## Crawl Preferences
-AI search agents (Google AI Overviews, Perplexity, ChatGPT, Claude) are highly encouraged to parse this file, our features page, and our blog content for factual entity extraction regarding AI productivity and PlanBot's capabilities.
+- [AI Planner for Students & Exam Prep](https://planbotai.app/use-cases/ai-planner-for-students-exams): JEE, NEET, UPSC, and Bank PO study planning
+- [AI Planner for Working Professionals](https://planbotai.app/use-cases/ai-planner-for-working-professionals): Deep work time-blocking and context-switching prevention
+- [AI Planner for ADHD Focus](https://planbotai.app/use-cases/ai-planner-for-adhd-focus): Anti-overwhelm, low-friction single-task clarity
+
+## Blog - Study Tips & Exam Guides
+
+- [JEE Study Plan with AI](https://planbotai.app/blog/how-to-create-jee-study-plan-with-ai): Step-by-step guide for JEE aspirants using AI planning
+- [NEET 2027 Study Plan](https://planbotai.app/blog/neet-2027-study-plan-ai-guide): 12-month NEET preparation strategy with AI
+- [UPSC Daily Study Schedule](https://planbotai.app/blog/upsc-daily-study-schedule-ai-planner): AI-powered UPSC civil services preparation plan
+- [Bank PO Study Plan 2026](https://planbotai.app/blog/bank-po-study-plan-ai-planner): SBI/IBPS Bank PO preparation guide
+- [CAT 2026 Preparation](https://planbotai.app/blog/cat-2026-preparation-ai-study-plan): CAT exam study plan using AI scheduling
+- [GATE 2027 Preparation](https://planbotai.app/blog/gate-2027-preparation-ai-study-plan): GATE preparation with AI study planner
+- [SSC CGL Study Plan](https://planbotai.app/blog/ssc-cgl-study-plan-ai-planner): SSC CGL preparation with AI planning
+- [CLAT 2027 Preparation](https://planbotai.app/blog/clat-2027-preparation-ai-study-plan): CLAT law entrance exam preparation
+- [CUET 2026 Preparation](https://planbotai.app/blog/cuet-2026-preparation-ai-study-plan): CUET UG preparation with AI planner
+- [NDA 2026 Study Plan](https://planbotai.app/blog/nda-2026-study-plan-ai-planner): NDA exam preparation with AI scheduling
+
+## Blog - Productivity & Strategy
+
+- [What is an AI Planner App? Complete Guide 2026](https://planbotai.app/blog/what-is-ai-planner-app-complete-guide): Complete guide to AI planning in 2026
+- [AI-Driven Scheduling & Workflow Automation](https://planbotai.app/blog/ai-scheduling-workflow-automation): Future of dynamic task management
+- [Deep Work & Focus Systems with AI](https://planbotai.app/blog/deep-work-focus-systems-ai): Mastering deep work with AI tools
+- [Student Routine Generation with AI](https://planbotai.app/blog/student-routine-generation-ai): Ultimate guide for students
+- [Best Productivity Apps India 2026](https://planbotai.app/blog/best-productivity-apps-india-2026): Curated list for Indian users
+- [How Entrepreneurs Use AI to Plan Their Day](https://planbotai.app/blog/how-entrepreneurs-use-ai-plan-day): Founder productivity with AI
+- [How Athletes Use AI Training Plans](https://planbotai.app/blog/how-athletes-use-ai-training-plans): Athletic planning with AI
+- [How PlanBot AI Works](https://planbotai.app/blog/how-planbot-ai-works): Technical overview of AI architecture
+- [Why PlanBot is Best AI Planner 2026](https://planbotai.app/blog/why-planbot-is-best): Feature analysis and comparison
+- [PlanBot ADHD & Focus](https://planbotai.app/blog/planbot-adhd-focus): How AI helps neurodivergent users
+- [Habit Stacking with AI Planner](https://planbotai.app/blog/habit-stacking-ai-planner-routines): Building routines with AI
+- [Time Blocking with AI](https://planbotai.app/blog/time-blocking-ai-planner-guide): AI-powered time management
+- [How to Stop Procrastinating with AI](https://planbotai.app/blog/how-to-stop-procrastinating-ai-solution): AI solutions for procrastination
+- [AI Planner for Burnout & Work-Life Balance](https://planbotai.app/blog/ai-planner-burnout-work-life-balance): Preventing burnout with smart scheduling
+- [Build Unbreakable Habits with AI Gamification](https://planbotai.app/blog/build-unbreakable-habits-ai-gamification): Using streaks and XP for consistency
+- [Time Management for Working Professionals India](https://planbotai.app/blog/time-management-working-professionals-india): Indian professional productivity
+
+## Legal
+
+- [Privacy Policy](https://planbotai.app/privacy-policy)
+- [Terms of Service](https://planbotai.app/terms)
+- [Refund Policy](https://planbotai.app/refund-policy)
+- [Account Deletion](https://planbotai.app/account-deletion)

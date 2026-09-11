@@ -7,9 +7,21 @@ export default function robots(): MetadataRoute.Robots {
       // Default rule — allow all standard search engine crawlers
       {
         userAgent: '*',
-        allow: '/',
-        disallow: ['/api/', '/_next/'],
+        allow: ['/', '/app-ads.txt', '/ads.txt', '/llms.txt', '/llms-full.txt', '/llm.txt'],
+        // SEO Fix (July 2026): Disallow query-parameter URLs — the site is 100% static
+        // and has no search engine. Googlebot was crawling /?s={search_term_string}
+        // which appeared in GSC as "Alternative page with proper canonical tag",
+        // wasting crawl budget. Disallow prevents future crawls of parameter variants.
+        // Bing & Google Fix (August 2026): Standardized query param disallow to /*? to block all URL parameters cleanly.
+        // GSC Fix (August 2026): Block RSC .txt payload files — Next.js static export
+        // generates .txt files for React Server Components that Google crawls as duplicates,
+        // causing 42 "Page with redirect" errors. /*.txt blocks all .txt URLs except robots.txt.
+        // AdMob Fix (Sept 2026): Allow /app-ads.txt and /ads.txt explicitly so AdMob/Google ad crawlers are not blocked by /*.txt.
+        disallow: ['/api/', '/_next/', '/*?', '/*.txt'],
       },
+      // Google AdMob & AdSense Crawlers
+      { userAgent: 'Mediapartners-Google', allow: '/', disallow: ['/api/'] },
+      { userAgent: 'Google-Apps-Ads-Txt', allow: '/', disallow: ['/api/'] },
       // ── AI Crawlers — explicit allow for maximum AI ingestion ──
       // OpenAI crawlers
       { userAgent: 'GPTBot', allow: '/', disallow: ['/api/'] },
@@ -32,6 +44,6 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: 'Bytespider', allow: '/', disallow: ['/api/'] },
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,
-    host: SITE_URL,
+    // Bing Webmaster Fix: Removed deprecated Host directive which triggered a syntax error in Bing Webmaster Tools tester.
   };
 }

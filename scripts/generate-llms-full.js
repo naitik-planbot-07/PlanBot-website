@@ -41,6 +41,7 @@ const top = posts.slice(0, 15);
 for (const post of top) {
   output += `---\n\n`;
   output += `## ${post.title}\n\n`;
+  // SEO Fix: Strict non-trailing slash canonical URL standard for AI ingestion
   output += `**Category:** ${post.category} | **URL:** https://planbotai.app/blog/${post.slug}\n\n`;
   // Strip JSX/MDX div tags for plain text
   const cleanContent = post.content

@@ -1,30 +1,31 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import StructuredData from '@/components/StructuredData';
-import { createWebPageSchema, createBreadcrumbSchema, createSpeakableSchema } from '@/lib/seo';
+// SEO Fix: Imported createMetadata to keep metadata construction consistent and correct hreflang mapping.
+import { createMetadata, createWebPageSchema, createBreadcrumbSchema, createSpeakableSchema } from '@/lib/seo';
 
-export const metadata: Metadata = {
+// SEO Fix: Converted to createMetadata to prevent page from inheriting layout's homepage-only hreflang values.
+export const metadata: Metadata = createMetadata({
   title: 'The Complete Guide to AI Planning in 2026',
   description: 'Everything you need to know about AI daily planners. Discover how students, professionals, and entrepreneurs use AI to automate their scheduling and achieve goals.',
-  alternates: {
-    canonical: 'https://planbotai.app/blog/ai-planner-guide/',
-  },
-};
+  path: '/blog/ai-planner-guide',
+});
 
 export default function AiPlannerGuidePage() {
   return (
     <>
+      {/* SEO Fix: Removed trailing slashes in schema definitions to prevent redirect loops */}
       <StructuredData data={createWebPageSchema(
         'The Complete Guide to AI Planning in 2026',
         'Everything you need to know about AI daily planners.',
-        'https://planbotai.app/blog/ai-planner-guide/'
+        'https://planbotai.app/blog/ai-planner-guide'
       )} />
       <StructuredData data={createBreadcrumbSchema([
-        { name: 'Home', item: 'https://planbotai.app/' },
-        { name: 'Blog', item: 'https://planbotai.app/blog/' },
-        { name: 'AI Planner Guide', item: 'https://planbotai.app/blog/ai-planner-guide/' }
+        { name: 'Home', item: 'https://planbotai.app' },
+        { name: 'Blog', item: 'https://planbotai.app/blog' },
+        { name: 'AI Planner Guide', item: 'https://planbotai.app/blog/ai-planner-guide' }
       ])} />
-      <StructuredData data={createSpeakableSchema('https://planbotai.app/blog/ai-planner-guide/', 'The Complete Guide to AI Planning')} />
+      <StructuredData data={createSpeakableSchema('https://planbotai.app/blog/ai-planner-guide', 'The Complete Guide to AI Planning')} />
 
       <main className="pt-28 pb-20 md:pt-36 px-4 sm:px-6 relative overflow-hidden">
         <div className="absolute top-1/4 -left-64 w-[500px] h-[500px] bg-primary/20 blur-[120px] rounded-full mix-blend-screen pointer-events-none" />
@@ -56,7 +57,7 @@ export default function AiPlannerGuidePage() {
                 <span className="text-3xl">🤖</span> What is AI Planning?
               </h2>
               <p className="text-text-secondary text-lg mb-6 leading-relaxed">
-                Traditional to-do lists are passive grids. They record tasks but don't help you execute them. AI Planning uses artificial intelligence to dynamically structure your day, balance your cognitive load, and adapt to unexpected changes.
+                Traditional to-do lists are passive grids. They record tasks but don&apos;t help you execute them. AI Planning uses artificial intelligence to dynamically structure your day, balance your cognitive load, and adapt to unexpected changes.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Link href="/blog/what-is-ai-planner-app-complete-guide" className="block p-4 rounded-xl border border-white/10 hover:border-accent/50 bg-white/5 hover:bg-white/10 transition-colors">
@@ -98,6 +99,21 @@ export default function AiPlannerGuidePage() {
                 <Link href="/blog/ai-productivity-hacks-college-students" className="p-4 rounded-xl bg-surface border border-white/5 hover:border-primary/50 transition-colors text-center">
                   <h3 className="font-semibold text-white">College Hacks</h3>
                 </Link>
+                <Link href="/blog/clat-2027-preparation-ai-study-plan" className="p-4 rounded-xl bg-surface border border-white/5 hover:border-primary/50 transition-colors text-center">
+                  <h3 className="font-semibold text-white">CLAT 2027</h3>
+                </Link>
+                <Link href="/blog/cuet-2026-preparation-ai-study-plan" className="p-4 rounded-xl bg-surface border border-white/5 hover:border-primary/50 transition-colors text-center">
+                  <h3 className="font-semibold text-white">CUET UG 2026</h3>
+                </Link>
+                <Link href="/blog/ssc-cgl-study-plan-ai-planner" className="p-4 rounded-xl bg-surface border border-white/5 hover:border-primary/50 transition-colors text-center">
+                  <h3 className="font-semibold text-white">SSC CGL 2026</h3>
+                </Link>
+                <Link href="/blog/bank-po-study-plan-ai-planner" className="p-4 rounded-xl bg-surface border border-white/5 hover:border-primary/50 transition-colors text-center">
+                  <h3 className="font-semibold text-white">Bank PO (SBI/IBPS)</h3>
+                </Link>
+                <Link href="/blog/nda-2026-study-plan-ai-planner" className="p-4 rounded-xl bg-surface border border-white/5 hover:border-primary/50 transition-colors text-center">
+                  <h3 className="font-semibold text-white">NDA 2026</h3>
+                </Link>
               </div>
             </section>
 
@@ -108,7 +124,7 @@ export default function AiPlannerGuidePage() {
                 <span className="text-3xl">⚔️</span> AI Planner vs Traditional Apps
               </h2>
               <p className="text-text-secondary text-lg mb-6 leading-relaxed">
-                Why is an AI Planner better than a simple to-do list? We've compared PlanBot against the most popular productivity apps on the market to show you the difference between manual and automated planning.
+                Why is an AI Planner better than a simple to-do list? We&apos;ve compared PlanBot against the most popular productivity apps on the market to show you the difference between manual and automated planning.
               </p>
               <div className="space-y-3">
                 <Link href="/blog/planbot-vs-google-calendar" className="flex items-center justify-between p-4 rounded-xl bg-surface border border-white/5 hover:border-accent/50 transition-colors">
@@ -125,6 +141,26 @@ export default function AiPlannerGuidePage() {
                 </Link>
                 <Link href="/blog/planbot-vs-ticktick" className="flex items-center justify-between p-4 rounded-xl bg-surface border border-white/5 hover:border-accent/50 transition-colors">
                   <span className="font-semibold text-white">PlanBot vs TickTick</span>
+                  <span className="text-accent text-sm">Read Comparison →</span>
+                </Link>
+                <Link href="/blog/planbot-vs-motion" className="flex items-center justify-between p-4 rounded-xl bg-surface border border-white/5 hover:border-accent/50 transition-colors">
+                  <span className="font-semibold text-white">PlanBot vs Motion</span>
+                  <span className="text-accent text-sm">Read Comparison →</span>
+                </Link>
+                <Link href="/blog/planbot-vs-reclaim" className="flex items-center justify-between p-4 rounded-xl bg-surface border border-white/5 hover:border-accent/50 transition-colors">
+                  <span className="font-semibold text-white">PlanBot vs Reclaim.ai</span>
+                  <span className="text-accent text-sm">Read Comparison →</span>
+                </Link>
+                <Link href="/blog/planbot-vs-sunsama" className="flex items-center justify-between p-4 rounded-xl bg-surface border border-white/5 hover:border-accent/50 transition-colors">
+                  <span className="font-semibold text-white">PlanBot vs Sunsama</span>
+                  <span className="text-accent text-sm">Read Comparison →</span>
+                </Link>
+                <Link href="/blog/planbot-vs-akiflow" className="flex items-center justify-between p-4 rounded-xl bg-surface border border-white/5 hover:border-accent/50 transition-colors">
+                  <span className="font-semibold text-white">PlanBot vs Akiflow</span>
+                  <span className="text-accent text-sm">Read Comparison →</span>
+                </Link>
+                <Link href="/blog/planbot-vs-free-productivity-apps" className="flex items-center justify-between p-4 rounded-xl bg-surface border border-white/5 hover:border-accent/50 transition-colors">
+                  <span className="font-semibold text-white">PlanBot vs Free Apps</span>
                   <span className="text-accent text-sm">Read Comparison →</span>
                 </Link>
               </div>
@@ -150,6 +186,21 @@ export default function AiPlannerGuidePage() {
                 </Link>
                 <Link href="/blog/how-to-stop-procrastinating-ai-solution" className="block p-4 rounded-xl border border-white/10 hover:border-pink-accent/50 bg-white/5 hover:bg-white/10 transition-colors">
                   <h3 className="font-semibold text-white mb-1">Stopping Procrastination</h3>
+                </Link>
+                <Link href="/blog/ai-planner-burnout-work-life-balance" className="block p-4 rounded-xl border border-white/10 hover:border-pink-accent/50 bg-white/5 hover:bg-white/10 transition-colors">
+                  <h3 className="font-semibold text-white mb-1">Burnout & Work-Life Balance</h3>
+                </Link>
+                <Link href="/blog/habit-stacking-ai-planner-routines" className="block p-4 rounded-xl border border-white/10 hover:border-pink-accent/50 bg-white/5 hover:bg-white/10 transition-colors">
+                  <h3 className="font-semibold text-white mb-1">Habit Stacking with AI</h3>
+                </Link>
+                <Link href="/blog/plan-night-before-morning-routine" className="block p-4 rounded-xl border border-white/10 hover:border-pink-accent/50 bg-white/5 hover:bg-white/10 transition-colors">
+                  <h3 className="font-semibold text-white mb-1">Planning the Night Before</h3>
+                </Link>
+                <Link href="/blog/daily-review-ritual-ai-planner" className="block p-4 rounded-xl border border-white/10 hover:border-pink-accent/50 bg-white/5 hover:bg-white/10 transition-colors">
+                  <h3 className="font-semibold text-white mb-1">The Daily Review Ritual</h3>
+                </Link>
+                <Link href="/blog/time-blocking-ai-planner-guide" className="block p-4 rounded-xl border border-white/10 hover:border-pink-accent/50 bg-white/5 hover:bg-white/10 transition-colors">
+                  <h3 className="font-semibold text-white mb-1">Time Blocking with AI</h3>
                 </Link>
               </div>
             </section>

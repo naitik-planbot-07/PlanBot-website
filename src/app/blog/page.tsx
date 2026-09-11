@@ -1,7 +1,8 @@
 import type { Metadata } from 'next';
 import BlogCard from '@/components/BlogCard';
 import { getAllPosts } from '@/lib/mdx';
-import { createMetadata } from '@/lib/seo';
+import { createMetadata, createItemListSchema } from '@/lib/seo';
+import StructuredData from '@/components/StructuredData';
 
 export const metadata: Metadata = createMetadata({
   title: 'PlanBot Blog — AI Planning Tips, Study Guides & Productivity',
@@ -14,6 +15,7 @@ export default function BlogIndex() {
 
   return (
     <>
+      <StructuredData data={createItemListSchema(posts.map(p => `/blog/${p.slug}`))} />
       <section className="pt-28 pb-16 md:pt-36 md:pb-20 px-4 sm:px-6 text-center">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
           Tips, Guides & Strategies for <span className="text-gradient">Goal Achievers</span>

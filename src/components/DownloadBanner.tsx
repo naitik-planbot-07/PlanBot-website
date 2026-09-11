@@ -1,3 +1,4 @@
+import PlayStoreLink from '@/components/PlayStoreLink';
 const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=cpm.planbot';
 
 export default function DownloadBanner() {
@@ -9,15 +10,11 @@ export default function DownloadBanner() {
           <br />
           <span className="text-text-dim">Download to start planning.</span>
         </p>
-        <a
-          href={PLAY_STORE_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="shrink-0 px-4 py-2 rounded-lg text-xs font-semibold text-white"
-          style={{ background: 'linear-gradient(135deg, #1E90FF, #00C6FF)' }}
-        >
+        <PlayStoreLink location="download_banner" className="shrink-0 px-4 py-2 rounded-lg text-xs font-semibold text-white" style={{ background: 'linear-gradient(135deg, #1E90FF, #00C6FF)' }}>
+
           Get App
-        </a>
+        
+</PlayStoreLink>
       </div>
     </div>
   );

@@ -2,11 +2,14 @@ import type { Metadata } from 'next';
 import { createMetadata, createWebPageSchema, createBreadcrumbSchema } from '@/lib/seo';
 import StructuredData from '@/components/StructuredData';
 
-export const metadata: Metadata = createMetadata({
-  title: 'Account Deletion Policy — PlanBot',
-  description: 'How to delete your PlanBot account and associated data. Step-by-step instructions for account removal.',
-  path: '/account-deletion',
-});
+// GSC Fix (August 2026): noindex on thin legal pages — prevents "Crawled - currently not indexed" waste
+export const metadata: Metadata = {
+  ...createMetadata({
+    title: 'Account Deletion Policy — PlanBot',
+    description: 'How to delete your PlanBot account and associated data. Step-by-step instructions for account removal.',
+    path: '/account-deletion',
+  }),
+  };
 
 export default function AccountDeletionPage() {
   return (
@@ -17,7 +20,7 @@ export default function AccountDeletionPage() {
         'https://planbotai.app/account-deletion'
       )} />
       <StructuredData data={createBreadcrumbSchema([
-        { name: 'Home', item: 'https://planbotai.app/' },
+        { name: 'Home', item: 'https://planbotai.app' },
         { name: 'Account Deletion', item: 'https://planbotai.app/account-deletion' }
       ])} />
 

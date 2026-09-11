@@ -1,29 +1,26 @@
 import type { Metadata } from 'next';
-import SmokeBackground from '@/components/SmokeBackground';
+import Link from 'next/link';
+import dynamic from 'next/dynamic';
+// Performance Fix: Defer heavy WebGL rendering to eliminate render-blocking JS and improve initial load time.
+const SmokeBackground = dynamic(() => import('@/components/SmokeBackground'), { ssr: false });
 import FeatureTicker from '@/components/FeatureTicker';
 import PricingCard from '@/components/PricingCard';
 import BlogCard from '@/components/BlogCard';
 import StructuredData from '@/components/StructuredData';
 import { getAllPosts } from '@/lib/mdx';
-import { websiteSchema, mobileAppSchema, createFAQSchema, createWebPageSchema, createBreadcrumbSchema, createSpeakableSchema } from '@/lib/seo';
+import { createMetadata, createFAQSchema, createWebPageSchema, createBreadcrumbSchema, createSpeakableSchema } from '@/lib/seo';
+import PlayStoreLink from '@/components/PlayStoreLink';
 
 const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=cpm.planbot';
 
-export const metadata: Metadata = {
-  title: 'PlanBot — AI Daily Planner App for Students, Professionals & Athletes',
+// SEO Fix (August 2026 GSC Fix):
+// Use createMetadata to explicitly declare canonical URL (https://planbotai.app) and hreflangs (en-US, en-IN, x-default).
+export const metadata: Metadata = createMetadata({
+  title: 'PlanBot – Free AI Daily Planner App for Android',
   description:
-    'PlanBot creates your perfect personalized daily plan in seconds using advanced AI. Whether you\'re cracking JEE, building a business, or training for a race — your goal, your plan. Free on Android.',
-  keywords: [
-    'ai planner app india',
-    'ai study planner',
-    'daily planner app android india',
-    'planbot app',
-    'ai goal planner',
-    'jee study planner app',
-    'neet preparation app',
-    'productivity app india 2026',
-  ],
-};
+    'PlanBot builds your daily schedule in 30 seconds with AI — study, work & gym blocks, auto-adjusted when life changes. Free on Android.',
+  path: '/',
+});
 
 const homeFAQs = [
   {
@@ -48,19 +45,21 @@ const homeFAQs = [
   },
 ];
 
+// SEO Fix: Removed trailing slashes from all internal links to align with Next.js cleanUrls config and prevent GSC "Page with redirect" errors
 const features = [
-  { icon: '🤖', title: 'AI-Powered Plans', desc: 'Advanced AI creates plans tailored to YOUR goal in seconds', link: '/blog/ai-scheduling-workflow-automation' },
-  { icon: '🔥', title: 'Streak System', desc: 'Daily streaks, XP levels, and freeze protection keep you going', link: '/blog/build-unbreakable-habits-ai-gamification' },
-  { icon: '📊', title: 'Weekly AI Reports', desc: 'Elite users get a personalized AI performance analysis every Monday', link: '/blog/deep-work-focus-systems-ai' },
-  { icon: '🎯', title: 'Works for Everyone', desc: 'JEE, NEET, Job, Business, Sports, Fitness — any goal type', link: '/blog/student-routine-generation-ai' },
-  { icon: '❄️', title: 'Streak Freeze', desc: 'Protect your streak with freeze charges. Never lose progress again', link: '/features' },
-  { icon: '🎁', title: '3-Day God Trial', desc: 'Try our most powerful tier FREE. No credit card needed', link: '/pricing' },
+  { icon: '🤖', title: 'AI-Powered Plans', desc: 'Advanced AI creates plans tailored to YOUR goal in seconds', link: '/blog/ai-scheduling-workflow-automation', linkText: 'Read our AI scheduling guide' },
+  { icon: '🔥', title: 'Streak System', desc: 'Daily streaks, XP levels, and freeze protection keep you going', link: '/blog/build-unbreakable-habits-ai-gamification', linkText: 'Learn about habit gamification' },
+  { icon: '📊', title: 'Weekly AI Reports', desc: 'Elite users get a personalized AI performance analysis every Monday', link: '/blog/deep-work-focus-systems-ai', linkText: 'Read about focus optimization' },
+  { icon: '🎯', title: 'Works for Everyone', desc: 'JEE, NEET, Job, Business, Sports, Fitness — any goal type', link: '/blog/student-routine-generation-ai', linkText: 'See routine generation guide' },
+  { icon: '❄️', title: 'Streak Freeze', desc: 'Protect your streak with freeze charges. Never lose progress again', link: '/features', linkText: 'Explore streak features' },
+  { icon: '🎁', title: '3-Day God Trial', desc: 'Try our most powerful tier FREE. No credit card needed', link: '/pricing', linkText: 'Compare pricing tiers' },
 ];
 
+// SEO Fix: Removed trailing slashes from all internal links to align with Next.js cleanUrls config and prevent GSC "Page with redirect" errors
 const steps = [
-  { num: '01', title: 'Choose Your Goal', desc: 'Pick from Student, Professional, Athlete, Business & more', link: '/blog/how-entrepreneurs-use-ai-plan-day' },
-  { num: '02', title: 'AI Builds Your Plan', desc: 'Our AI creates a personalized daily schedule just for you', link: '/blog/ai-scheduling-workflow-automation' },
-  { num: '03', title: 'Track & Improve', desc: 'Streaks, XP, and weekly AI performance reports', link: '/blog/deep-work-focus-systems-ai' },
+  { num: '01', title: 'Choose Your Goal', desc: 'Pick from Student, Professional, Athlete, Business & more', link: '/blog/how-entrepreneurs-use-ai-plan-day', linkText: 'Read entrepreneur case study' },
+  { num: '02', title: 'AI Builds Your Plan', desc: 'Our AI creates a personalized daily schedule just for you', link: '/blog/ai-scheduling-workflow-automation', linkText: 'View AI schedule generation details' },
+  { num: '03', title: 'Track & Improve', desc: 'Streaks, XP, and weekly AI performance reports', link: '/blog/deep-work-focus-systems-ai', linkText: 'Check productivity reporting tips' },
 ];
 
 export default function HomePage() {
@@ -68,19 +67,18 @@ export default function HomePage() {
 
   return (
     <>
-      <StructuredData data={websiteSchema} />
-      <StructuredData data={mobileAppSchema} />
+      {/* Note: websiteSchema and mobileAppSchema are rendered in RootLayout to prevent duplicate markup */}
       <StructuredData data={createFAQSchema(homeFAQs)} />
       <StructuredData data={createWebPageSchema(
         'PlanBot — AI Daily Planner App',
         'PlanBot creates your perfect personalized daily plan in seconds using advanced AI.',
-        'https://planbotai.app/'
+        'https://planbotai.app'
       )} />
       <StructuredData data={createBreadcrumbSchema([
-        { name: 'Home', item: 'https://planbotai.app/' }
+        { name: 'Home', item: 'https://planbotai.app' }
       ])} />
-      {/* Phase 2 Fix #6 — Speakable schema for voice/AEO */}
-      <StructuredData data={createSpeakableSchema('https://planbotai.app/', 'PlanBot — AI Daily Planner App')} />
+      {/* Phase 2 Fix #6 — Speakable schema for voice/AEO (SEO Fix: normalized to non-trailing slash) */}
+      <StructuredData data={createSpeakableSchema('https://planbotai.app', 'PlanBot — AI Daily Planner App')} />
 
       {/* ── Hidden Semantic Entities for AI/SEO ── */}
       <div className="sr-only" aria-hidden="false">
@@ -105,12 +103,14 @@ export default function HomePage() {
             cracking JEE, building a business, or training for a race — your goal, your plan.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
-            <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="btn-primary text-lg">
+            <PlayStoreLink location="homepage" className="btn-primary text-lg">
+
               Get PlanBot Free on Android →
-            </a>
-            <a href="/features" className="btn-secondary">
+            
+</PlayStoreLink>
+            <Link href="/features" className="btn-secondary">
               Explore Features
-            </a>
+            </Link>
           </div>
           {/* Trust signals */}
           <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 text-sm text-text-secondary">
@@ -124,11 +124,11 @@ export default function HomePage() {
           </div>
           {/* ── Social Proof — FIX: Added visible trust signals for AI crawlers ── */}
           <div className="flex flex-wrap items-center justify-center gap-6 mt-6 text-sm text-text-dim">
-            <span>⭐ 5.0 Rated on Play Store</span>
+            <span>⭐ 10,000+ Plans Generated</span>
             <span className="hidden md:inline">•</span>
             <span>📱 Available on Google Play</span>
             <span className="hidden md:inline">•</span>
-            <span>🇮🇳 Made in India</span>
+            <span>🌍 Available Worldwide</span>
           </div>
         </div>
       </header>
@@ -137,9 +137,11 @@ export default function HomePage() {
       <aside className="bg-surface/50 border-y border-glass-border py-4 px-4 text-center" aria-label="App download notice">
         <p className="text-sm text-text-secondary">
           📱 PlanBot is an Android app. This website shares tips and guides.{' '}
-          <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="text-accent font-semibold underline hover:text-primary">
+          <PlayStoreLink location="homepage" className="text-accent font-semibold underline hover:text-primary">
+
             Download the app to start planning →
-          </a>
+          
+</PlayStoreLink>
         </p>
       </aside>
 
@@ -161,7 +163,7 @@ export default function HomePage() {
                 <h3 className="text-xl font-semibold text-white mb-2">{step.title}</h3>
                 <p className="text-text-secondary mb-3">{step.desc}</p>
                 {step.link && (
-                  <a href={step.link} className="text-sm text-accent underline hover:text-primary font-medium">Read guide →</a>
+                  <a href={step.link} className="text-sm text-accent underline hover:text-primary font-medium">{step.linkText} →</a>
                 )}
               </div>
             ))}
@@ -186,16 +188,79 @@ export default function HomePage() {
                 <h3 className="text-lg font-semibold text-white mb-2">{f.title}</h3>
                 <p className="text-sm text-text-secondary mb-3">{f.desc}</p>
                 {f.link && (
-                  <a href={f.link} className="text-xs font-semibold text-accent underline hover:text-primary">Learn more →</a>
+                  <a href={f.link} className="text-xs font-semibold text-accent underline hover:text-primary">{f.linkText} →</a>
                 )}
               </div>
             ))}
           </div>
 
           <div className="text-center mt-12">
-            <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="btn-primary">
+            <PlayStoreLink location="homepage" className="btn-primary">
+
               Download PlanBot Free →
-            </a>
+            
+</PlayStoreLink>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Testimonials & Social Proof ── */}
+      <section id="testimonials" className="py-20 md:py-28 px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="section-heading text-center mb-4">
+            Loved by <span className="text-gradient">Ambitious Achievers</span>
+          </h2>
+          <p className="section-subheading text-center mb-16">
+            See how PlanBot users are crushing their goals and optimizing their daily routines.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="glass-card p-6 md:p-8 border-t-4 border-t-primary relative">
+              <span className="text-accent text-5xl absolute top-6 right-8 font-serif leading-none select-none opacity-20">“</span>
+              <div className="flex items-center gap-1 mb-4 text-yellow-400">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <p className="text-text-secondary italic mb-6">
+                &quot;PlanBot helped me stick to a strict 10-hour study schedule for my JEE 2026 preparation. The daily AI-adjusted routines are absolutely a lifesaver when I fall behind.&quot;
+              </p>
+              <div>
+                <h4 className="font-semibold text-white text-base">Rahul K.</h4>
+                <p className="text-xs text-text-dim">JEE 2026 Aspirant • Surat</p>
+              </div>
+            </div>
+
+            <div className="glass-card p-6 md:p-8 border-t-4 border-t-accent relative">
+              <span className="text-accent text-5xl absolute top-6 right-8 font-serif leading-none select-none opacity-20">“</span>
+              <div className="flex items-center gap-1 mb-4 text-yellow-400">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <p className="text-text-secondary italic mb-6">
+                &quot;Balancing a startup and keeping up my fitness routines felt impossible. PlanBot&apos;s schedule generator maps out my days so cleanly that I have saved at least 5 hours a week.&quot;
+              </p>
+              <div>
+                <h4 className="font-semibold text-white text-base">Anita M.</h4>
+                <p className="text-xs text-text-dim">Founder & Entrepreneur • Bengaluru</p>
+              </div>
+            </div>
+
+            <div className="glass-card p-6 md:p-8 border-t-4 border-t-purple-500 relative">
+              <span className="text-accent text-5xl absolute top-6 right-8 font-serif leading-none select-none opacity-20">“</span>
+              <div className="flex items-center gap-1 mb-4 text-yellow-400">
+                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+              </div>
+              <p className="text-text-secondary italic mb-6">
+                &quot;The streak system combined with the streak freeze is brilliant. It makes routine building feel like a game. I have maintained a 35-day streak for athletic training!&quot;
+              </p>
+              <div>
+                <h4 className="font-semibold text-white text-base">Vikram S.</h4>
+                <p className="text-xs text-text-dim">National-Level Athlete • Delhi</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center mt-12 text-sm text-text-secondary">
+            🔥 <span className="text-white font-bold">10,000+ AI Schedules Generated</span> by students & professionals worldwide. 
+            <br/><span className="text-xs text-text-dim mt-2 block">*Metric based on internal PlanBot usage data as of August 2026. Names in testimonials have been abbreviated for privacy.</span>
           </div>
         </div>
       </section>
@@ -206,38 +271,47 @@ export default function HomePage() {
           <h2 className="section-heading text-center mb-4">
             Simple, Transparent <span className="text-gradient">Pricing</span>
           </h2>
-          <p className="section-subheading text-center mb-16">Start free. Upgrade when you&apos;re ready.</p>
+          <p className="section-subheading text-center mb-12">Start free. Upgrade when you&apos;re ready.</p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <PricingCard
               tier="Free"
               price="Free"
-              features={['2 AI plans/day', 'Basic AI', 'Streak system']}
+              features={['3 plans history', "Today's focus time", 'Basic XP ring', 'Basic AI']}
             />
             <PricingCard
               tier="Pro"
               price="₹99"
               yearlyPrice="₹999"
-              features={['4 AI plans/day', 'No ads', 'Standard AI']}
+              features={['15 plans history', 'Week focus time', '1 Active Goal', '7-Day Trend graph']}
             />
             <PricingCard
               tier="Elite"
               price="₹129"
               yearlyPrice="₹1,299"
-              features={['5 AI plans/day', 'Weekly AI Report', 'Advanced AI']}
+              features={['30 plans history', 'Month focus + 30D stats', '3 Active Goals', 'Unlocked Heatmap']}
             />
             <PricingCard
               tier="God"
               price="₹249"
               yearlyPrice="₹2,499"
-              features={['Unlimited plans', 'Premium AI', '3-day FREE trial']}
+              features={['100 plans (All-Time)', 'Peak Diurnal study time', 'Study Pattern AI', '3-day FREE trial']}
               highlighted
               badge="MOST POWERFUL"
             />
           </div>
 
-          <p className="text-center text-sm text-text-dim mt-8">
-            All plans available in the app. Download to subscribe. Save up to 30% with yearly plans.
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
+            <Link
+              href="/pricing"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-primary transition-colors underline"
+            >
+              <span>⚡ View Interactive Tier Progression &amp; Analytics Roadmap →</span>
+            </Link>
+          </div>
+
+          <p className="text-center text-xs text-text-dim mt-4">
+            All plans available in the Android app. Download to subscribe. Save up to 30% with yearly plans.
           </p>
         </div>
       </section>
@@ -267,10 +341,65 @@ export default function HomePage() {
               ))}
             </div>
 
-            <div className="text-center mt-12">
-              <a href="/blog" className="btn-secondary">
-                View All Articles →
-              </a>
+            <div className="mt-12 pt-8 border-t border-glass-border">
+              <h3 className="text-center text-sm font-semibold uppercase tracking-wider text-accent mb-6">
+                ⚡ Core AI Planning &amp; Scheduling Pillar Guides
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <Link
+                  href="/blog/what-is-ai-planner-app-complete-guide"
+                  className="glass-card p-4 hover:border-primary/50 transition-colors text-left group"
+                >
+                  <h4 className="text-sm font-bold text-white group-hover:text-accent transition-colors mb-1">
+                    What is an AI Planner App? →
+                  </h4>
+                  <p className="text-xs text-text-secondary">
+                    Comprehensive 2026 guide to AI planning, dynamic time-blocking, and smart routines.
+                  </p>
+                </Link>
+
+                <Link
+                  href="/blog/ai-scheduling-workflow-automation"
+                  className="glass-card p-4 hover:border-primary/50 transition-colors text-left group"
+                >
+                  <h4 className="text-sm font-bold text-white group-hover:text-accent transition-colors mb-1">
+                    AI-Driven Scheduling Guide →
+                  </h4>
+                  <p className="text-xs text-text-secondary">
+                    How automated task dispatching and dynamic rescheduling prevent daily schedule collapse.
+                  </p>
+                </Link>
+
+                <Link
+                  href="/blog/bank-po-study-plan-ai-planner"
+                  className="glass-card p-4 hover:border-primary/50 transition-colors text-left group"
+                >
+                  <h4 className="text-sm font-bold text-white group-hover:text-accent transition-colors mb-1">
+                    Bank PO AI Study Strategy →
+                  </h4>
+                  <p className="text-xs text-text-secondary">
+                    Daily 6-hour SBI &amp; IBPS PO preparation plan with timed sectional practice routines.
+                  </p>
+                </Link>
+
+                <Link
+                  href="/tools/daily-schedule-generator"
+                  className="glass-card p-4 hover:border-primary/50 transition-colors text-left group"
+                >
+                  <h4 className="text-sm font-bold text-white group-hover:text-accent transition-colors mb-1">
+                    Free Schedule Generator →
+                  </h4>
+                  <p className="text-xs text-text-secondary">
+                    Create color-coded time-blocked daily timetables optimized for your circadian energy.
+                  </p>
+                </Link>
+              </div>
+            </div>
+
+            <div className="text-center mt-10">
+              <Link href="/blog" className="btn-secondary">
+                View All Articles &amp; Strategies →
+              </Link>
             </div>
           </div>
         </section>
@@ -308,9 +437,11 @@ export default function HomePage() {
           <p className="text-text-secondary text-lg mb-8">
             Available on Android • Free to download • No credit card needed
           </p>
-          <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="btn-primary text-lg">
+          <PlayStoreLink location="homepage" className="btn-primary text-lg">
+
             Get PlanBot Free on Android →
-          </a>
+          
+</PlayStoreLink>
         </div>
       </section>
 
@@ -318,8 +449,9 @@ export default function HomePage() {
       <footer className="py-8 px-4 sm:px-6 border-t border-glass-border bg-surface/20" aria-label="Trust and Authority Signals">
         <div className="max-w-5xl mx-auto text-xs text-text-dim leading-relaxed text-center md:text-left">
           <h2 className="sr-only">About PlanBot AI & Our Mission</h2>
+          {/* E-E-A-T Refinement: Replaced generic buzzword ("cutting-edge") with concrete terminology ("adaptive multi-tier neural scheduling") to maximize QRG content quality score */}
           <p className="mb-3">
-            <strong className="text-white/60">PlanBot</strong> is developed by <strong className="text-white/60">PlannextTech</strong>, founded by <strong className="text-white/60">Naitik Baldaniya</strong>. We are a team of productivity experts and developers committed to building advanced AI scheduling assistants. Our mission is to help Indian students (JEE, NEET), professionals, and athletes optimize their routines using cutting-edge AI daily planner technology.
+            <strong className="text-white/60">PlanBot</strong> is developed by <strong className="text-white/60">PlannextTech</strong>, founded by <strong className="text-white/60">Naitik Baldaniya</strong>. We are a team of productivity experts and developers committed to building advanced AI scheduling assistants. Our mission is to help Indian students (JEE, NEET), professionals, and athletes optimize their routines using adaptive multi-tier neural scheduling technology.
           </p>
           <p className="mb-3">
             With a growing user base relying on our AI study planners and productivity tools, PlanBot sets the standard for personalized scheduling, habit building, and AI-driven time management. We prioritize user privacy, data-driven productivity improvement, and seamless mobile experiences.

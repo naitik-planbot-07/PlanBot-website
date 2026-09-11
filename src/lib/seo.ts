@@ -3,11 +3,16 @@ import type { Metadata } from 'next';
 export const SITE_URL = 'https://planbotai.app';
 export const SITE_NAME = 'PlanBot';
 
+// SEO Fix (August 2026 GSC Forensic Remediation):
+// Standardized formatUrl to strictly return non-trailing-slash canonical URLs (e.g. https://planbotai.app)
+// to align with Firebase Hosting cleanUrls/trailingSlash:false and eliminate "Page with redirect" errors.
 export function formatUrl(pathOrUrl: string): string {
-  if (!pathOrUrl || pathOrUrl === '/') return `${SITE_URL}/`;
+  if (!pathOrUrl || pathOrUrl === '/' || pathOrUrl === SITE_URL || pathOrUrl === `${SITE_URL}/`) {
+    return SITE_URL;
+  }
   let url = pathOrUrl.startsWith('http') ? pathOrUrl : `${SITE_URL}${pathOrUrl.startsWith('/') ? pathOrUrl : `/${pathOrUrl}`}`;
-  if (!url.endsWith('/')) {
-    url += '/';
+  while (url.endsWith('/') && url !== SITE_URL) {
+    url = url.slice(0, -1);
   }
   return url;
 }
@@ -26,25 +31,50 @@ export function createMetadata({
   type?: string;
 }): Metadata {
   const url = formatUrl(path);
+
+  // Bing Webmaster Fix (August 2026): Cap description at 160 chars and prevent double-appending brand in title.
+  const formatDesc = (descStr: string) => {
+    if (!descStr || descStr.length <= 160) return descStr;
+    const trimmed = descStr.slice(0, 157);
+    const lastSpace = trimmed.lastIndexOf(' ');
+    const finalTrimmed = lastSpace > 100 ? trimmed.slice(0, lastSpace) : trimmed;
+    return finalTrimmed.replace(/[.,\s]+$/, '') + '...';
+  };
+  const safeDescription = formatDesc(description);
+
+  // If title has '| PlanBot' or length > 60 chars, use absolute title capped at 65 chars.
+  let safeTitle: string | { absolute: string } = title;
+  if (title.includes('| PlanBot') || title.length > 60) {
+    const cleanTitle = title.length > 65 ? title.slice(0, 62) + '...' : title;
+    safeTitle = { absolute: cleanTitle };
+  }
+
   return {
-    title,
-    description,
+    title: safeTitle,
+    description: safeDescription,
     openGraph: {
       title,
-      description,
+      description: safeDescription,
       url,
       siteName: SITE_NAME,
       images: [{ url: image, width: 1200, height: 630, alt: title }],
-      locale: 'en_IN',
       type: type as 'website',
     },
     twitter: {
       card: 'summary_large_image',
       title,
-      description,
+      description: safeDescription,
     },
+    // SEO Fix (August 2026 GSC Fix):
+    // Explicitly define canonical and all language alternates (en-US, en-IN, x-default) pointing to this page's URL.
+    // This stops Googlebot from inheriting root-level '/' defaults and resolving "Duplicate, Google chose different canonical than user".
     alternates: {
       canonical: url,
+      languages: {
+        'en-US': url,
+        'en-IN': url,
+        'x-default': url,
+      },
     },
   };
 }
@@ -52,24 +82,22 @@ export function createMetadata({
 export const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
+  '@id': `${SITE_URL}/#website`,
   name: 'PlanBot',
   url: SITE_URL,
   description:
-    'PlanBot is an Android productivity app by PlannextTech that uses advanced AI to generate personalized daily plans for students, professionals, and athletes in India.',
+    'PlanBot is an Android productivity app by PlannextTech that uses advanced AI to generate personalized daily plans. Rated among the best productivity planners for students, it also scales perfectly for office productivity and enterprise time management worldwide.',
   publisher: {
-    '@type': 'Organization',
-    name: 'PlannextTech',
+    '@id': `${SITE_URL}/#organization`,
   },
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: `${SITE_URL}/?s={search_term_string}`,
-    'query-input': 'required name=search_term_string',
-  },
+  // SEO Fix: Removed SearchAction potentialAction schema because the website is static and lacks an internal search engine.
+  // This prevents Googlebot from crawling template search query URLs like /?s={search_term_string}.
 };
 
 export const mobileAppSchema = {
   '@context': 'https://schema.org',
   '@type': ['SoftwareApplication', 'MobileApplication'],
+  '@id': `${SITE_URL}/#app`,
   name: 'PlanBot',
   operatingSystem: 'Android',
   applicationCategory: 'ProductivityApplication',
@@ -82,20 +110,11 @@ export const mobileAppSchema = {
   installUrl: 'https://play.google.com/store/apps/details?id=cpm.planbot',
   description:
     'PlanBot is an AI-powered daily planner app for Android that creates personalized plans using advanced AI technology. Perfect for students, professionals, and athletes.',
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '5.0',
-    ratingCount: '10',
-  },
   author: {
-    '@type': 'Organization',
-    name: 'PlannextTech',
-    url: SITE_URL,
+    '@id': `${SITE_URL}/#organization`,
   },
   publisher: {
-    '@type': 'Organization',
-    name: 'PlannextTech',
-    url: SITE_URL,
+    '@id': `${SITE_URL}/#organization`,
   },
   featureList: [
     'AI Schedule Generation',
@@ -104,31 +123,30 @@ export const mobileAppSchema = {
     'Time Management Assistant',
     'Gamified Productivity',
   ],
-  // FIX: Removed fabricated review — schema.org reviews must be real
-  // TODO: Add verified user reviews when collected through a proper review system
 };
 
 export const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': `${SITE_URL}/#organization`,
   name: 'PlannextTech',
   alternateName: 'PlanBot Team',
   url: SITE_URL,
+  areaServed: { '@type': 'Country', 'name': 'Worldwide' },
   logo: `${SITE_URL}/android-chrome-512x512.png`,
   description:
     'PlannextTech builds advanced AI productivity tools and scheduling systems for ambitious individuals. PlanBot is our flagship AI daily planner app for Android, designed to optimize time management and routine generation.',
-  // SEO/GEO Fix #4 — Enhanced Founder E-E-A-T schema
-  // WHY: LLMs weigh 'knowsAbout' heavily when deciding what to cite.
-  // Adding topical authority markers dramatically increases AI citation likelihood.
   founder: {
     '@type': 'Person',
     name: 'Naitik Baldaniya',
     jobTitle: 'Founder & CEO',
     url: `${SITE_URL}/about`,
-    sameAs: [
-      'https://www.instagram.com/planbotai?igsh=bXplYm92dG13c3Jq',
-    ],
-    description: 'Productivity expert and software developer dedicated to building AI-driven scheduling and focus systems.',
+      sameAs: [
+        'https://www.linkedin.com/in/naitik-baldaniya',
+        'https://www.instagram.com/planbotai?igsh=bXplYm92dG13c3Jq',
+        'https://x.com/planbotai'
+      ],
+    description: 'Productivity systems architect and software developer specializing in AI-driven scheduling algorithms and Spaced Repetition Systems.',
     knowsAbout: [
       'AI Planning',
       'Time Management',
@@ -152,12 +170,31 @@ export const organizationSchema = {
     'https://whatsapp.com/channel/0029Vb7U0vR8aKvH1quo1f3G',
     'https://www.instagram.com/planbotai?igsh=bXplYm92dG13c3Jq',
     'https://play.google.com/store/apps/details?id=cpm.planbot',
+    'https://x.com/planbotai',
+    'https://youtube.com/@planbotai',
   ],
   contactPoint: {
     '@type': 'ContactPoint',
     email: 'plannexttech@gmail.com',
     contactType: 'customer support',
     availableLanguage: ['English', 'Hindi']
+  }
+};
+
+export const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Naitik Baldaniya',
+  jobTitle: 'Founder & CEO',
+  image: `${SITE_URL}/images/naitik-baldaniya.jpg`,
+  url: `${SITE_URL}/author/naitik-baldaniya`,
+  sameAs: [
+    'https://www.linkedin.com/in/naitik-baldaniya',
+    'https://www.instagram.com/planbotai?igsh=bXplYm92dG13c3Jq',
+    'https://x.com/planbotai'
+  ],
+  worksFor: {
+    '@id': `${SITE_URL}/#organization`
   }
 };
 
@@ -180,6 +217,7 @@ export function createArticleSchema({
   title,
   description,
   date,
+  updated,
   author,
   slug,
   image = '/logo.png',
@@ -187,6 +225,7 @@ export function createArticleSchema({
   title: string;
   description: string;
   date: string;
+  updated?: string;
   author: { name: string; url?: string };
   slug: string;
   image?: string;
@@ -198,15 +237,20 @@ export function createArticleSchema({
     description,
     image,
     datePublished: date,
-    dateModified: date,
+    dateModified: updated || date,
     author: {
       '@type': 'Person',
       name: author.name,
-      url: author.url || formatUrl(`/authors/${author.name.toLowerCase().replace(/ /g, '-')}`),
+      url: author.url || formatUrl('/author/naitik-baldaniya'),
     },
     publisher: {
+      '@id': `${SITE_URL}/#organization`,
       '@type': 'Organization',
-      name: 'PlannextTech',
+      name: 'PlanBot',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE_URL}/android-chrome-512x512.png`
+      }
     },
     mainEntityOfPage: {
       '@type': 'WebPage',
@@ -238,13 +282,6 @@ export function createWebPageSchema(title: string, description: string, url: str
   };
 }
 
-/**
- * Phase 2 Fix #6 — Speakable Schema (AEO/Voice search optimization)
- * 
- * WHY: Speakable tells Google Assistant and voice-search engines which parts
- * of the page to read aloud. Targets .aeo-answer and .tl-dr blocks we add
- * to every blog post, plus headings for context.
- */
 export function createSpeakableSchema(url: string, name: string) {
   return {
     '@context': 'https://schema.org',
@@ -253,22 +290,16 @@ export function createSpeakableSchema(url: string, name: string) {
     url: formatUrl(url),
     speakable: {
       '@type': 'SpeakableSpecification',
-      cssSelector: ['.aeo-answer', '.tl-dr', 'h1', 'h2', 'h3', 'strong'],
+      cssSelector: ['.aeo-answer', '.tl-dr'],
     },
   };
 }
 
-/**
- * Phase 2 Fix #7 — HowTo Schema (tutorial/step-by-step structured data)
- * 
- * WHY: HowTo schema enables rich results in Google Search for tutorial content.
- * Especially important for "how to create JEE study plan" type queries.
- */
 export function createHowToSchema(opts: {
   name: string;
   description: string;
   steps: Array<{ name: string; text: string; url?: string }>;
-  totalTime?: string; // ISO 8601 e.g. "PT10M"
+  totalTime?: string;
 }) {
   return {
     '@context': 'https://schema.org',
@@ -282,6 +313,35 @@ export function createHowToSchema(opts: {
       name: step.name,
       text: step.text,
       url: step.url,
+    })),
+  };
+}
+
+export function createWebApplicationSchema(name: string, url: string, description: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name,
+    url: formatUrl(url),
+    applicationCategory: 'UtilityApplication',
+    operatingSystem: 'Any',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'INR',
+    },
+    description,
+  };
+}
+
+export function createItemListSchema(items: string[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: items.map((url, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      url: formatUrl(url),
     })),
   };
 }

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import PlayStoreLink from '@/components/PlayStoreLink';
 
 const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=cpm.planbot';
 
@@ -7,12 +8,31 @@ const footerLinks = {
   product: [
     { href: '/features', label: 'Features' },
     { href: '/pricing', label: 'Pricing' },
-    { href: PLAY_STORE_URL, label: 'Download', external: true },
+    { href: '/tools', label: 'Free Tools' },
+    { href: '/compare', label: 'Compare' },
+    { href: '/use-cases', label: 'Use Cases' },
+    { href: PLAY_STORE_URL, label: 'Download App', external: true },
+  ],
+  tools: [
+    { href: '/tools/daily-schedule-generator', label: 'Daily Schedule Generator' },
+    { href: '/tools/exam-revision-calculator', label: 'Exam Revision Calculator' },
+    { href: '/tools/pomodoro-focus-calculator', label: 'Pomodoro Calculator' },
+    { href: '/tools/weather-forecast', label: 'Weather Forecast & Planner' },
+    { href: '/use-cases/ai-planner-for-students-exams', label: 'JEE / NEET Prep' },
+    { href: '/use-cases/ai-planner-for-adhd-focus', label: 'ADHD Focus Planner' },
+  ],
+  compare: [
+    { href: '/compare/planbot-vs-motion', label: 'PlanBot vs Motion' },
+    { href: '/compare/planbot-vs-notion', label: 'PlanBot vs Notion' },
+    { href: '/compare/planbot-vs-todoist', label: 'PlanBot vs Todoist' },
+    { href: '/compare/planbot-vs-google-calendar', label: 'PlanBot vs G-Cal' },
+    { href: '/compare/planbot-vs-ticktick', label: 'PlanBot vs TickTick' },
   ],
   company: [
     { href: '/about', label: 'About' },
     { href: '/contact', label: 'Contact' },
     { href: '/blog', label: 'Blog' },
+    { href: '/author/naitik-baldaniya', label: 'Founder Bio' },
   ],
   legal: [
     { href: '/privacy-policy', label: 'Privacy Policy' },
@@ -23,6 +43,8 @@ const footerLinks = {
   social: [
     { href: 'https://whatsapp.com/channel/0029Vb7U0vR8aKvH1quo1f3G', label: 'WhatsApp', external: true },
     { href: 'https://www.instagram.com/planbotai?igsh=bXplYm92dG13c3Jq', label: 'Instagram', external: true },
+    { href: 'https://x.com/planbotai', label: 'X (Twitter)', external: true },
+    { href: 'https://youtube.com/@planbotai', label: 'YouTube', external: true },
   ],
 };
 
@@ -62,7 +84,7 @@ export default function Footer() {
     <footer className="border-t border-glass-border bg-deep-space/80">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         {/* Top */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-6 gap-8 mb-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-3 group">
@@ -80,12 +102,17 @@ export default function Footer() {
             <p className="mt-3 text-sm text-text-secondary leading-relaxed">
               AI-powered daily planner for ambitious people. Your goal, your plan.
             </p>
+            <div className="mt-4 text-xs text-text-dim space-y-1">
+              <p>📍 Kutch, Gujarat, India</p>
+              <p>✉️ <a href="mailto:plannexttech@gmail.com" className="hover:text-accent">plannexttech@gmail.com</a></p>
+            </div>
           </div>
 
           <FooterSection title="Product" links={footerLinks.product} />
+          <FooterSection title="Free Tools" links={footerLinks.tools} />
+          <FooterSection title="Compare" links={footerLinks.compare} />
           <FooterSection title="Company" links={footerLinks.company} />
           <FooterSection title="Legal" links={footerLinks.legal} />
-          <FooterSection title="Social" links={footerLinks.social} />
         </div>
 
         {/* Bottom */}
@@ -95,14 +122,11 @@ export default function Footer() {
           </p>
           <p className="text-xs text-text-dim text-center md:text-right">
             PlanBot is an Android app. Download from{' '}
-            <a
-              href={PLAY_STORE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-accent hover:underline"
-            >
+            <PlayStoreLink location="footer" className="text-accent hover:underline">
+
               Google Play
-            </a>
+            
+</PlayStoreLink>
             .
           </p>
         </div>

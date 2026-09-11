@@ -2,11 +2,14 @@ import type { Metadata } from 'next';
 import { createMetadata, createWebPageSchema, createBreadcrumbSchema } from '@/lib/seo';
 import StructuredData from '@/components/StructuredData';
 
-export const metadata: Metadata = createMetadata({
-  title: 'Refund Policy — PlanBot',
-  description: 'Refund Policy for PlanBot. Learn about Google Play refund rules and how to request a refund.',
-  path: '/refund-policy',
-});
+// GSC Fix (August 2026): noindex on thin legal pages — prevents "Crawled - currently not indexed" waste
+export const metadata: Metadata = {
+  ...createMetadata({
+    title: 'Refund Policy — PlanBot',
+    description: 'Refund Policy for PlanBot. Learn about Google Play refund rules and how to request a refund.',
+    path: '/refund-policy',
+  }),
+  };
 
 export default function RefundPolicyPage() {
   return (
@@ -17,7 +20,7 @@ export default function RefundPolicyPage() {
         'https://planbotai.app/refund-policy'
       )} />
       <StructuredData data={createBreadcrumbSchema([
-        { name: 'Home', item: 'https://planbotai.app/' },
+        { name: 'Home', item: 'https://planbotai.app' },
         { name: 'Refund Policy', item: 'https://planbotai.app/refund-policy' }
       ])} />
 

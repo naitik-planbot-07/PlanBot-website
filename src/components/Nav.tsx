@@ -3,12 +3,15 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import PlayStoreLink from '@/components/PlayStoreLink';
 
 const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=cpm.planbot';
 
 const navLinks = [
   { href: '/features', label: 'Features' },
   { href: '/pricing', label: 'Pricing' },
+  { href: '/tools', label: 'Free Tools' },
+  { href: '/compare', label: 'Compare' },
   { href: '/blog', label: 'Blog' },
   { href: '/about', label: 'About' },
   { href: '/contact', label: 'Contact' },
@@ -24,10 +27,12 @@ export default function Nav() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <div className="relative w-8 h-8 rounded-lg overflow-hidden border border-white/10 group-hover:border-primary/50 transition-colors">
+              {/* LCP Optimization: priority attribute enables fetchpriority="high" on the critical header logo */}
               <Image 
                 src="/logo.jpeg" 
                 alt="PlanBot Logo" 
                 fill
+                priority
                 className="object-cover"
                 sizes="32px"
               />
@@ -46,14 +51,11 @@ export default function Nav() {
                 {link.label}
               </Link>
             ))}
-            <a
-              href={PLAY_STORE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary !px-6 !py-2.5 text-sm"
-            >
+            <PlayStoreLink location="nav" className="btn-primary !px-6 !py-2.5 text-sm">
+
               Download App →
-            </a>
+            
+</PlayStoreLink>
           </div>
 
           {/* Mobile Hamburger */}
@@ -83,14 +85,11 @@ export default function Nav() {
                   {link.label}
                 </Link>
               ))}
-              <a
-                href={PLAY_STORE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary text-center mt-2"
-              >
+              <PlayStoreLink location="nav" className="btn-primary text-center mt-2">
+
                 Download App →
-              </a>
+              
+</PlayStoreLink>
             </div>
           </div>
         )}

@@ -20,19 +20,19 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   applicationName: SITE_NAME,
   title: {
-    default: `${SITE_NAME} — AI Daily Planner App for Students, Professionals & Athletes`,
+    default: `${SITE_NAME} — AI Daily Planner for Students, Pros & Athletes`,
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    'PlanBot is an AI-powered daily planner app for Android that creates personalized plans for students, professionals, athletes, and entrepreneurs using advanced AI technology.',
+    'PlanBot is an AI daily planner app for Android that builds custom smart schedules for students, professionals, athletes, and entrepreneurs in seconds.',
   keywords: [
-    'ai planner app india',
-    'ai study planner',
-    'daily planner app android india',
+    'AI daily planner app',
+    'AI schedule generator',
+    'smart planner app',
+    'AI productivity app',
+    'automatic daily planner',
+    'AI routine planner',
     'planbot app',
-    'ai goal planner',
-    'productivity app india',
-    'ai schedule maker',
   ],
   verification: {
     google: [
@@ -46,8 +46,8 @@ export const metadata: Metadata = {
       'Create your perfect personalized daily plan in seconds using advanced AI. Students, Professionals, Athletes — any goal, any plan.',
     url: SITE_URL,
     siteName: SITE_NAME,
-    images: [{ url: '/logo.png', width: 1200, height: 630, alt: `${SITE_NAME} AI Planner` }],
-    locale: 'en_IN',
+    images: [{ url: '/logo.jpg', width: 1200, height: 630, alt: `${SITE_NAME} AI Planner` }],
+    locale: 'en_US',
     type: 'website',
   },
   twitter: {
@@ -56,17 +56,10 @@ export const metadata: Metadata = {
     description:
       'Create your perfect personalized daily plan in seconds using advanced AI.',
   },
-  // SEO Fix #3 — Hreflang tags for language targeting
-  // NOTE: hi-IN is commented out until a /hi route is actually created
-  alternates: {
-    canonical: '/',
-    languages: {
-      'en-IN': '/',
-      'en-US': '/',
-      // 'hi-IN': '/hi', // TODO: uncomment when Hindi pages are built
-      'x-default': '/',
-    },
-  },
+  // SEO Fix (August 2026 GSC Fix):
+  // Removed global alternates block from RootLayout metadata. 
+  // Each individual page now defines its own canonical and hreflang tags via createMetadata(),
+  // preventing subpages and client tools from inheriting the homepage URL as canonical.
   other: {
     'msvalidate.01': 'E3DBF400C81A3D855B242EBA78D63F37', // Phase 3 Fix #18: Bing Webmaster verification
   },
@@ -84,22 +77,22 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.ico' },
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/favicon-48x48.png', sizes: '48x48', type: 'image/png' },
-      { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
+      { url: '/favicon-16x16.jpg', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon-32x32.jpg', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-48x48.jpg', sizes: '48x48', type: 'image/png' },
+      { url: '/favicon-96x96.jpg', sizes: '96x96', type: 'image/png' },
     ],
     apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      { url: '/apple-touch-icon.jpg', sizes: '180x180', type: 'image/png' },
     ],
     other: [
       {
         rel: 'android-chrome-192x192',
-        url: '/android-chrome-192x192.png',
+        url: '/android-chrome-192x192.jpg',
       },
       {
         rel: 'android-chrome-512x512',
-        url: '/android-chrome-512x512.png',
+        url: '/android-chrome-512x512.jpg',
       },
     ],
   },
@@ -116,6 +109,43 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* Performance Optimization (August 2026): Speculation Rules API for instant sub-50ms prerendering & prefetching on high-intent user routes */}
+        <script
+          type="speculationrules"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              prerender: [
+                {
+                  source: 'list',
+                  urls: [
+                    '/pricing',
+                    '/features',
+                    '/tools/daily-schedule-generator',
+                    '/tools/exam-revision-calculator',
+                    '/tools/pomodoro-focus-calculator',
+                    '/tools/weather-forecast',
+                    '/compare/planbot-vs-motion',
+                    '/blog',
+                  ],
+                  eagerness: 'moderate',
+                },
+              ],
+              prefetch: [
+                {
+                  source: 'document',
+                  where: {
+                    and: [
+                      { href_matches: '/*' },
+                      { not: { href_matches: '/api/*' } },
+                      { not: { href_matches: '/*\\?*' } },
+                    ],
+                  },
+                  eagerness: 'conservative',
+                },
+              ],
+            }),
+          }}
+        />
       </head>
       <body className="bg-deep-space text-white font-sans antialiased">
         <StructuredData data={websiteSchema} />
@@ -128,16 +158,21 @@ export default function RootLayout({
         {/* SEO Fix #5 — GA4 tracking. */}
         <GoogleAnalytics gaId="G-0Y5H7R0D6Z" />
 
-        {/* Phase 3 Fix #18: Microsoft Clarity */}
+        {/* Facebook Pixel Code */}
+
+
+        {/* Microsoft Clarity Analytics: Updated tag ID to x7grrxn17q for active PlanBot behavioral session recordings & heatmaps */}
         <Script id="microsoft-clarity" strategy="afterInteractive">
           {`
             (function(c,l,a,r,i,t,y){
                 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
                 t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
                 y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "x7grxn17q");
+            })(window, document, "clarity", "script", "x7grrxn17q");
           `}
         </Script>
+
+        {/* Removed Noupe AI Chatbot per user request to remove chatbot from website */}
       </body>
     </html>
   );

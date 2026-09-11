@@ -16,12 +16,14 @@ export interface BlogPost {
   title: string;
   description: string;
   date: string;
+  updated?: string;
   category: string;
   tags: string[];
   author: Author;
   readTime: string;
   content: string;
   howToSteps?: Array<{ name: string; text: string }>;
+  faqs?: Array<{ question: string; answer: string }>;
   heroImage?: string;
 }
 
@@ -41,11 +43,13 @@ export function getAllPosts(): BlogPost[] {
       title: data.title || '',
       description: data.description || '',
       date: data.date || '',
+      updated: data.updated || undefined,
       category: data.category || 'General',
       tags: data.tags || [],
       author: typeof data.author === 'object' ? data.author : { name: data.author || 'PlanBot Team', role: 'Editor', expertise: 'General Productivity' },
       readTime: data.readTime || '5 min read',
       howToSteps: data.howToSteps || undefined,
+      faqs: data.faqs || undefined,
       heroImage: data.heroImage || undefined,
       content,
     };
@@ -66,11 +70,13 @@ export function getPostBySlug(slug: string): BlogPost | null {
     title: data.title || '',
     description: data.description || '',
     date: data.date || '',
+    updated: data.updated || undefined,
     category: data.category || 'General',
     tags: data.tags || [],
     author: typeof data.author === 'object' ? data.author : { name: data.author || 'PlanBot Team', role: 'Editor', expertise: 'General Productivity' },
     readTime: data.readTime || '5 min read',
     howToSteps: data.howToSteps || undefined,
+    faqs: data.faqs || undefined,
     heroImage: data.heroImage || undefined,
     content,
   };

@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',        // Static HTML export — required for Firebase Hosting
-  trailingSlash: true,     // Generates /about/index.html instead of /about.html
-                           // Firebase Hosting serves directories correctly
+  trailingSlash: false,    // Generates /about.html instead of /about/index.html
+                           // Firebase Hosting with cleanUrls will serve it at /about
   images: {
     unoptimized: true,
   },

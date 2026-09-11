@@ -46,7 +46,7 @@ export default function EmailCapture() {
 
         {status === 'success' ? (
           <div className="bg-green-500/10 border border-green-500/20 text-green-400 p-4 rounded-xl flex items-center justify-center gap-2">
-            <span className="text-xl">🎉</span> You're in! Check your email to confirm.
+            <span className="text-xl">🎉</span> You&apos;re in! Check your email to confirm.
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">

@@ -1,3 +1,4 @@
+import PlayStoreLink from '@/components/PlayStoreLink';
 const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=cpm.planbot';
 
 interface PricingCardProps {
@@ -52,18 +53,11 @@ export default function PricingCard({
         ))}
       </ul>
 
-      <a
-        href={PLAY_STORE_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`text-center py-3 rounded-xl font-semibold text-sm transition-all duration-300 ${
-          highlighted
-            ? 'btn-primary'
-            : 'btn-secondary'
-        }`}
-      >
+      <PlayStoreLink location="pricing_card" className={`text-center py-3 rounded-xl font-semibold text-sm transition-all duration-300 ${ highlighted ? 'btn-primary' : 'btn-secondary' }`}>
+
         {price === 'Free' ? 'Download Free' : 'Get ' + tier} →
-      </a>
+      
+</PlayStoreLink>
     </div>
   );
 }

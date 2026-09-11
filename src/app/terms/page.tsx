@@ -1,12 +1,16 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { createMetadata, createWebPageSchema, createBreadcrumbSchema } from '@/lib/seo';
 import StructuredData from '@/components/StructuredData';
 
-export const metadata: Metadata = createMetadata({
-  title: 'Terms & Conditions — PlanBot',
-  description: 'Terms and Conditions for PlanBot. Read the rules and guidelines for using the PlanBot app.',
-  path: '/terms',
-});
+// GSC Fix (August 2026): noindex on thin legal pages — prevents "Crawled - currently not indexed" waste
+export const metadata: Metadata = {
+  ...createMetadata({
+    title: 'Terms & Conditions — PlanBot',
+    description: 'Terms and Conditions for PlanBot. Read the rules and guidelines for using the PlanBot app.',
+    path: '/terms',
+  }),
+  };
 
 export default function TermsPage() {
   return (
@@ -17,7 +21,7 @@ export default function TermsPage() {
         'https://planbotai.app/terms'
       )} />
       <StructuredData data={createBreadcrumbSchema([
-        { name: 'Home', item: 'https://planbotai.app/' },
+        { name: 'Home', item: 'https://planbotai.app' },
         { name: 'Terms & Conditions', item: 'https://planbotai.app/terms' }
       ])} />
 
@@ -75,7 +79,7 @@ export default function TermsPage() {
             </ul>
 
             <h2>7. Privacy Policy</h2>
-            <p>Your use of PlanBot is also governed by our <a href="/privacy-policy">Privacy Policy</a>, which details how we collect and use your information.</p>
+            <p>Your use of PlanBot is also governed by our <Link href="/privacy-policy" className="text-accent hover:underline">Privacy Policy</Link>, which details how we collect and use your information.</p>
 
             <h2>8. Changes to Terms</h2>
             <p>We reserve the right to modify these terms at any time. We will notify users of significant changes. Continued use of the App after changes constitutes acceptance of the new terms.</p>

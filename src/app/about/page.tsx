@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { createMetadata, organizationSchema, createWebPageSchema, createBreadcrumbSchema } from '@/lib/seo';
 import StructuredData from '@/components/StructuredData';
+import PlayStoreLink from '@/components/PlayStoreLink';
 
 const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=cpm.planbot';
 
@@ -8,7 +9,7 @@ export const metadata: Metadata = createMetadata({
   title: 'About PlanBot — Built by PlannextTech in India',
   description: 'PlanBot is an AI-powered daily planner app built by PlannextTech in India. Learn about our mission to make AI-powered planning accessible to everyone.',
   path: '/about',
-  image: '/og/about.png',
+  image: '/og/about.jpg',
 });
 
 export default function AboutPage() {
@@ -21,7 +22,7 @@ export default function AboutPage() {
         'https://planbotai.app/about'
       )} />
       <StructuredData data={createBreadcrumbSchema([
-        { name: 'Home', item: 'https://planbotai.app/' },
+        { name: 'Home', item: 'https://planbotai.app' },
         { name: 'About', item: 'https://planbotai.app/about' }
       ])} />
 
@@ -37,15 +38,25 @@ export default function AboutPage() {
         <div className="sr-only" aria-hidden="false">
           <h2>About PlannextTech and PlanBot AI</h2>
           <p>
-            PlannextTech is an Indian software development organization specializing in AI productivity tools. 
+            PlannextTech is an Indian software development organization founded in 2024, operating out of Gujarat, India. 
             PlanBot, our flagship Android application, serves as an AI scheduling assistant, routine optimizer, and study planner. 
-            We focus on evidence-based productivity, integrating time management psychology with machine learning to automate task management and routine planning.
+            Recognized as one of the best productivity planners for students, our algorithms are also engineered for deep office productivity. We focus on evidence-based systems, integrating time management psychology with machine learning to automate task management and routine planning.
           </p>
         </div>
       </section>
 
       <section className="pb-20 px-4 sm:px-6">
         <div className="max-w-3xl mx-auto space-y-12">
+          <div className="glass-card p-8">
+            <h2 className="text-2xl font-bold text-white mb-4">Our Story</h2>
+            <p className="text-text-secondary leading-relaxed mb-4">
+              Founded in 2024 and headquartered in Gujarat, India, PlannextTech started as a solo project to solve a fundamental problem: existing to-do list apps were passive and required too much manual organization. We wanted a system that actively told us what to do and when to do it.
+            </p>
+            <p className="text-text-secondary leading-relaxed">
+              That vision became PlanBot. Today, we are rapidly scaling as an independent developer studio, committed to competing on a global stage while maintaining a lean, engineering-first culture.
+            </p>
+          </div>
+
           <div className="glass-card p-8">
             <h2 className="text-2xl font-bold text-white mb-4">Our Mission</h2>
             <p className="text-text-secondary leading-relaxed">
@@ -109,7 +120,9 @@ export default function AboutPage() {
           </div>
 
           <div className="text-center">
-            <a href={PLAY_STORE_URL} target="_blank" rel="noopener noreferrer" className="btn-primary text-lg">Try PlanBot Free →</a>
+            <PlayStoreLink location="about_page" className="btn-primary text-lg">
+Try PlanBot Free →
+</PlayStoreLink>
           </div>
         </div>
       </section>

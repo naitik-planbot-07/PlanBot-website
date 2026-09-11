@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "planbot-n07"
+  },
+  "targets": {
+    "planbot-n07": {
+      "hosting": {
+        "hosting:planbotai": [
+          "planbot-n07"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
