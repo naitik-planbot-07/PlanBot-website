@@ -46,7 +46,7 @@ export const metadata: Metadata = {
       'Create your perfect personalized daily plan in seconds using advanced AI. Students, Professionals, Athletes — any goal, any plan.',
     url: SITE_URL,
     siteName: SITE_NAME,
-    images: [{ url: '/logo.jpg', width: 1200, height: 630, alt: `${SITE_NAME} AI Planner` }],
+    images: [{ url: '/logo.jpg', width: 1024, height: 1024, alt: `${SITE_NAME} AI Planner` }],
     locale: 'en_US',
     type: 'website',
   },

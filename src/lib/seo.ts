@@ -21,7 +21,7 @@ export function createMetadata({
   title,
   description,
   path = '',
-  image = '/logo.png',
+  image = '/logo.jpg',
   type = 'website',
 }: {
   title: string;
@@ -57,7 +57,7 @@ export function createMetadata({
       description: safeDescription,
       url,
       siteName: SITE_NAME,
-      images: [{ url: image, width: 1200, height: 630, alt: title }],
+      images: [{ url: image, width: 1024, height: 1024, alt: title }],
       type: type as 'website',
     },
     twitter: {
@@ -220,7 +220,7 @@ export function createArticleSchema({
   updated,
   author,
   slug,
-  image = '/logo.png',
+  image = '/logo.jpg',
 }: {
   title: string;
   description: string;
