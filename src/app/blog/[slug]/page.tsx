@@ -11,6 +11,7 @@ import EmailCapture from '@/components/EmailCapture';
 import ShareButtons from '@/components/ShareButtons';
 import LivePoll from '@/components/LivePoll';
 import PlayStoreLink from '@/components/PlayStoreLink';
+import SocialLinks from '@/components/SocialLinks';
 
 interface Props {
   params: { slug: string };
@@ -147,7 +148,7 @@ export default function BlogPost({ params }: Props) {
             {/* Registered LivePoll client component for interactive community voting */}
             <MDXRemote 
               source={post.content} 
-              components={{ LivePoll }}
+              components={{ LivePoll, SocialLinks }}
               options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }} 
             />
           </div>

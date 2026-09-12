@@ -6,32 +6,25 @@
       "static/chunks/2117-078bf551d6059bbc.js",
       "static/chunks/main-app-24ea975713000c46.js",
       "static/chunks/2972-d95e9c69b7558faa.js",
-      "static/chunks/app/not-found-7898f45516192c13.js"
+      "static/chunks/app/not-found-cff2d8037a74da0a.js"
     ],
     "/_not-found/page": [
       "static/chunks/webpack-dbbdc282e7aff405.js",
       "static/chunks/fd9d1056-790ee93443143d43.js",
       "static/chunks/2117-078bf551d6059bbc.js",
       "static/chunks/main-app-24ea975713000c46.js",
-      "static/chunks/app/_not-found/page-47abddc6b4e34e4b.js"
+      "static/chunks/app/_not-found/page-7f49551264bc7793.js"
     ],
     "/layout": [
       "static/chunks/webpack-dbbdc282e7aff405.js",
       "static/chunks/fd9d1056-790ee93443143d43.js",
       "static/chunks/2117-078bf551d6059bbc.js",
       "static/chunks/main-app-24ea975713000c46.js",
-      "static/css/8f59f50d52671e60.css",
+      "static/css/eee53ee910ae2afc.css",
       "static/chunks/2972-d95e9c69b7558faa.js",
       "static/chunks/3786-fab73365fad389a1.js",
       "static/chunks/5878-ec57f0a8888c976a.js",
       "static/chunks/app/layout-57c5a70df1b06389.js"
-    ],
-    "/account-deletion/page": [
-      "static/chunks/webpack-dbbdc282e7aff405.js",
-      "static/chunks/fd9d1056-790ee93443143d43.js",
-      "static/chunks/2117-078bf551d6059bbc.js",
-      "static/chunks/main-app-24ea975713000c46.js",
-      "static/chunks/app/account-deletion/page-bc7dd18ef2cfe590.js"
     ],
     "/author/naitik-baldaniya/page": [
       "static/chunks/webpack-dbbdc282e7aff405.js",
@@ -42,21 +35,13 @@
       "static/chunks/5878-ec57f0a8888c976a.js",
       "static/chunks/app/author/naitik-baldaniya/page-7d5724dea546399a.js"
     ],
-    "/blog/ai-planner-guide/page": [
+    "/about/page": [
       "static/chunks/webpack-dbbdc282e7aff405.js",
       "static/chunks/fd9d1056-790ee93443143d43.js",
       "static/chunks/2117-078bf551d6059bbc.js",
       "static/chunks/main-app-24ea975713000c46.js",
-      "static/chunks/2972-d95e9c69b7558faa.js",
-      "static/chunks/app/blog/ai-planner-guide/page-81ef9dbd73f25a12.js"
-    ],
-    "/blog/page": [
-      "static/chunks/webpack-dbbdc282e7aff405.js",
-      "static/chunks/fd9d1056-790ee93443143d43.js",
-      "static/chunks/2117-078bf551d6059bbc.js",
-      "static/chunks/main-app-24ea975713000c46.js",
-      "static/chunks/2972-d95e9c69b7558faa.js",
-      "static/chunks/app/blog/page-ddba228a9477de50.js"
+      "static/chunks/3786-fab73365fad389a1.js",
+      "static/chunks/app/about/page-475662e016a46575.js"
     ],
     "/blog/[slug]/page": [
       "static/chunks/webpack-dbbdc282e7aff405.js",
@@ -70,13 +55,28 @@
       "static/chunks/3119-05feaba65e15155a.js",
       "static/chunks/app/blog/[slug]/page-2ab2ae02d353a8ff.js"
     ],
+    "/account-deletion/page": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/app/account-deletion/page-b39eb57dff6a4076.js"
+    ],
+    "/blog/page": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/2972-d95e9c69b7558faa.js",
+      "static/chunks/app/blog/page-de8b235fd66d12d2.js"
+    ],
     "/compare/planbot-vs-google-calendar/page": [
       "static/chunks/webpack-dbbdc282e7aff405.js",
       "static/chunks/fd9d1056-790ee93443143d43.js",
       "static/chunks/2117-078bf551d6059bbc.js",
       "static/chunks/main-app-24ea975713000c46.js",
       "static/chunks/2972-d95e9c69b7558faa.js",
-      "static/chunks/app/compare/planbot-vs-google-calendar/page-128cdd7663a49ce6.js"
+      "static/chunks/app/compare/planbot-vs-google-calendar/page-29bbd3aaec2ef4fd.js"
     ],
     "/compare/page": [
       "static/chunks/webpack-dbbdc282e7aff405.js",
@@ -84,7 +84,7 @@
       "static/chunks/2117-078bf551d6059bbc.js",
       "static/chunks/main-app-24ea975713000c46.js",
       "static/chunks/2972-d95e9c69b7558faa.js",
-      "static/chunks/app/compare/page-60f5f4c4bc4a86e7.js"
+      "static/chunks/app/compare/page-1f3a57334b0ec87a.js"
     ],
     "/compare/planbot-vs-motion/page": [
       "static/chunks/webpack-dbbdc282e7aff405.js",
@@ -92,31 +92,7 @@
       "static/chunks/2117-078bf551d6059bbc.js",
       "static/chunks/main-app-24ea975713000c46.js",
       "static/chunks/2972-d95e9c69b7558faa.js",
-      "static/chunks/app/compare/planbot-vs-motion/page-77d2d4aac97a2f35.js"
-    ],
-    "/compare/planbot-vs-notion/page": [
-      "static/chunks/webpack-dbbdc282e7aff405.js",
-      "static/chunks/fd9d1056-790ee93443143d43.js",
-      "static/chunks/2117-078bf551d6059bbc.js",
-      "static/chunks/main-app-24ea975713000c46.js",
-      "static/chunks/2972-d95e9c69b7558faa.js",
-      "static/chunks/app/compare/planbot-vs-notion/page-9cf3d06277344c26.js"
-    ],
-    "/about/page": [
-      "static/chunks/webpack-dbbdc282e7aff405.js",
-      "static/chunks/fd9d1056-790ee93443143d43.js",
-      "static/chunks/2117-078bf551d6059bbc.js",
-      "static/chunks/main-app-24ea975713000c46.js",
-      "static/chunks/3786-fab73365fad389a1.js",
-      "static/chunks/app/about/page-475662e016a46575.js"
-    ],
-    "/compare/planbot-vs-ticktick/page": [
-      "static/chunks/webpack-dbbdc282e7aff405.js",
-      "static/chunks/fd9d1056-790ee93443143d43.js",
-      "static/chunks/2117-078bf551d6059bbc.js",
-      "static/chunks/main-app-24ea975713000c46.js",
-      "static/chunks/2972-d95e9c69b7558faa.js",
-      "static/chunks/app/compare/planbot-vs-ticktick/page-1570047d582e2c06.js"
+      "static/chunks/app/compare/planbot-vs-motion/page-c727c61b8b0dfb6d.js"
     ],
     "/compare/planbot-vs-todoist/page": [
       "static/chunks/webpack-dbbdc282e7aff405.js",
@@ -124,7 +100,15 @@
       "static/chunks/2117-078bf551d6059bbc.js",
       "static/chunks/main-app-24ea975713000c46.js",
       "static/chunks/2972-d95e9c69b7558faa.js",
-      "static/chunks/app/compare/planbot-vs-todoist/page-1b7024b12b5ab945.js"
+      "static/chunks/app/compare/planbot-vs-todoist/page-3e9509e91d66dc9d.js"
+    ],
+    "/blog/ai-planner-guide/page": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/2972-d95e9c69b7558faa.js",
+      "static/chunks/app/blog/ai-planner-guide/page-85ae824094e283f2.js"
     ],
     "/contact/page": [
       "static/chunks/webpack-dbbdc282e7aff405.js",
@@ -135,27 +119,20 @@
       "static/chunks/3119-05feaba65e15155a.js",
       "static/chunks/app/contact/page-1fabe58bc006f902.js"
     ],
-    "/terms/page": [
-      "static/chunks/webpack-dbbdc282e7aff405.js",
-      "static/chunks/fd9d1056-790ee93443143d43.js",
-      "static/chunks/2117-078bf551d6059bbc.js",
-      "static/chunks/main-app-24ea975713000c46.js",
-      "static/chunks/2972-d95e9c69b7558faa.js",
-      "static/chunks/app/terms/page-a54caa4ff9468979.js"
-    ],
-    "/refund-policy/page": [
-      "static/chunks/webpack-dbbdc282e7aff405.js",
-      "static/chunks/fd9d1056-790ee93443143d43.js",
-      "static/chunks/2117-078bf551d6059bbc.js",
-      "static/chunks/main-app-24ea975713000c46.js",
-      "static/chunks/app/refund-policy/page-a5d856d838c092a7.js"
-    ],
     "/privacy-policy/page": [
       "static/chunks/webpack-dbbdc282e7aff405.js",
       "static/chunks/fd9d1056-790ee93443143d43.js",
       "static/chunks/2117-078bf551d6059bbc.js",
       "static/chunks/main-app-24ea975713000c46.js",
-      "static/chunks/app/privacy-policy/page-1760ca51cce04b72.js"
+      "static/chunks/app/privacy-policy/page-41bd6e8aedb31ff2.js"
+    ],
+    "/compare/planbot-vs-notion/page": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/2972-d95e9c69b7558faa.js",
+      "static/chunks/app/compare/planbot-vs-notion/page-b3067c0c1603e677.js"
     ],
     "/features/page": [
       "static/chunks/webpack-dbbdc282e7aff405.js",
@@ -166,13 +143,44 @@
       "static/chunks/4447-04cc1f76d0f70798.js",
       "static/chunks/app/features/page-fc7c279c7fd6ab1a.js"
     ],
-    "/use-cases/page": [
+    "/compare/planbot-vs-ticktick/page": [
       "static/chunks/webpack-dbbdc282e7aff405.js",
       "static/chunks/fd9d1056-790ee93443143d43.js",
       "static/chunks/2117-078bf551d6059bbc.js",
       "static/chunks/main-app-24ea975713000c46.js",
       "static/chunks/2972-d95e9c69b7558faa.js",
-      "static/chunks/app/use-cases/page-221553667c080787.js"
+      "static/chunks/app/compare/planbot-vs-ticktick/page-70a5525f0fb2fb3b.js"
+    ],
+    "/terms/page": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/2972-d95e9c69b7558faa.js",
+      "static/chunks/app/terms/page-ea9bf278d41a1fdf.js"
+    ],
+    "/refund-policy/page": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/app/refund-policy/page-46eba74d054ec557.js"
+    ],
+    "/use-cases/ai-planner-for-students-exams/page": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/2972-d95e9c69b7558faa.js",
+      "static/chunks/app/use-cases/ai-planner-for-students-exams/page-afd74de5110075ef.js"
+    ],
+    "/use-cases/ai-planner-for-adhd-focus/page": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/2972-d95e9c69b7558faa.js",
+      "static/chunks/app/use-cases/ai-planner-for-adhd-focus/page-9478c6f3ec05c9ad.js"
     ],
     "/page": [
       "static/chunks/webpack-dbbdc282e7aff405.js",
@@ -183,21 +191,13 @@
       "static/chunks/3786-fab73365fad389a1.js",
       "static/chunks/app/page-25130a730a17396c.js"
     ],
-    "/use-cases/ai-planner-for-adhd-focus/page": [
+    "/tools/page": [
       "static/chunks/webpack-dbbdc282e7aff405.js",
       "static/chunks/fd9d1056-790ee93443143d43.js",
       "static/chunks/2117-078bf551d6059bbc.js",
       "static/chunks/main-app-24ea975713000c46.js",
       "static/chunks/2972-d95e9c69b7558faa.js",
-      "static/chunks/app/use-cases/ai-planner-for-adhd-focus/page-7640f9c8bd4ea4d5.js"
-    ],
-    "/use-cases/ai-planner-for-students-exams/page": [
-      "static/chunks/webpack-dbbdc282e7aff405.js",
-      "static/chunks/fd9d1056-790ee93443143d43.js",
-      "static/chunks/2117-078bf551d6059bbc.js",
-      "static/chunks/main-app-24ea975713000c46.js",
-      "static/chunks/2972-d95e9c69b7558faa.js",
-      "static/chunks/app/use-cases/ai-planner-for-students-exams/page-ed2d7fc9364a5a85.js"
+      "static/chunks/app/tools/page-c55a15d1edc66d44.js"
     ],
     "/use-cases/ai-planner-for-working-professionals/page": [
       "static/chunks/webpack-dbbdc282e7aff405.js",
@@ -205,30 +205,15 @@
       "static/chunks/2117-078bf551d6059bbc.js",
       "static/chunks/main-app-24ea975713000c46.js",
       "static/chunks/2972-d95e9c69b7558faa.js",
-      "static/chunks/app/use-cases/ai-planner-for-working-professionals/page-5cc98a8ea4826427.js"
+      "static/chunks/app/use-cases/ai-planner-for-working-professionals/page-f3ae84940fef6db0.js"
     ],
-    "/tools/page": [
+    "/use-cases/page": [
       "static/chunks/webpack-dbbdc282e7aff405.js",
       "static/chunks/fd9d1056-790ee93443143d43.js",
       "static/chunks/2117-078bf551d6059bbc.js",
       "static/chunks/main-app-24ea975713000c46.js",
       "static/chunks/2972-d95e9c69b7558faa.js",
-      "static/chunks/app/tools/page-ae0aabb361e1942f.js"
-    ],
-    "/pricing/page": [
-      "static/chunks/webpack-dbbdc282e7aff405.js",
-      "static/chunks/fd9d1056-790ee93443143d43.js",
-      "static/chunks/2117-078bf551d6059bbc.js",
-      "static/chunks/main-app-24ea975713000c46.js",
-      "static/chunks/4447-04cc1f76d0f70798.js",
-      "static/chunks/app/pricing/page-c2fd065798e33a2e.js"
-    ],
-    "/pricing/layout": [
-      "static/chunks/webpack-dbbdc282e7aff405.js",
-      "static/chunks/fd9d1056-790ee93443143d43.js",
-      "static/chunks/2117-078bf551d6059bbc.js",
-      "static/chunks/main-app-24ea975713000c46.js",
-      "static/chunks/app/pricing/layout-ca531988c5c1d918.js"
+      "static/chunks/app/use-cases/page-193a773a92a7b3de.js"
     ],
     "/tools/daily-schedule-generator/page": [
       "static/chunks/webpack-dbbdc282e7aff405.js",
@@ -244,23 +229,22 @@
       "static/chunks/fd9d1056-790ee93443143d43.js",
       "static/chunks/2117-078bf551d6059bbc.js",
       "static/chunks/main-app-24ea975713000c46.js",
-      "static/chunks/app/tools/daily-schedule-generator/layout-dd6e72d63b143193.js"
+      "static/chunks/app/tools/daily-schedule-generator/layout-f0add2eab510f797.js"
     ],
-    "/tools/pomodoro-focus-calculator/page": [
+    "/pricing/page": [
       "static/chunks/webpack-dbbdc282e7aff405.js",
       "static/chunks/fd9d1056-790ee93443143d43.js",
       "static/chunks/2117-078bf551d6059bbc.js",
       "static/chunks/main-app-24ea975713000c46.js",
-      "static/chunks/2972-d95e9c69b7558faa.js",
-      "static/chunks/3786-fab73365fad389a1.js",
-      "static/chunks/app/tools/pomodoro-focus-calculator/page-5ca8f0173ddf8217.js"
+      "static/chunks/4447-04cc1f76d0f70798.js",
+      "static/chunks/app/pricing/page-c2fd065798e33a2e.js"
     ],
-    "/tools/pomodoro-focus-calculator/layout": [
+    "/pricing/layout": [
       "static/chunks/webpack-dbbdc282e7aff405.js",
       "static/chunks/fd9d1056-790ee93443143d43.js",
       "static/chunks/2117-078bf551d6059bbc.js",
       "static/chunks/main-app-24ea975713000c46.js",
-      "static/chunks/app/tools/pomodoro-focus-calculator/layout-246be8f57f95a409.js"
+      "static/chunks/app/pricing/layout-b09cf3d9fc5c4d4c.js"
     ],
     "/tools/exam-revision-calculator/page": [
       "static/chunks/webpack-dbbdc282e7aff405.js",
@@ -276,7 +260,7 @@
       "static/chunks/fd9d1056-790ee93443143d43.js",
       "static/chunks/2117-078bf551d6059bbc.js",
       "static/chunks/main-app-24ea975713000c46.js",
-      "static/chunks/app/tools/exam-revision-calculator/layout-9bde760f66899f2b.js"
+      "static/chunks/app/tools/exam-revision-calculator/layout-d92a1f808a5116a8.js"
     ],
     "/tools/weather-forecast/page": [
       "static/chunks/webpack-dbbdc282e7aff405.js",
@@ -292,7 +276,23 @@
       "static/chunks/fd9d1056-790ee93443143d43.js",
       "static/chunks/2117-078bf551d6059bbc.js",
       "static/chunks/main-app-24ea975713000c46.js",
-      "static/chunks/app/tools/weather-forecast/layout-a2cab27ac450e993.js"
+      "static/chunks/app/tools/weather-forecast/layout-c044ea02b39005d1.js"
+    ],
+    "/tools/pomodoro-focus-calculator/page": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/2972-d95e9c69b7558faa.js",
+      "static/chunks/3786-fab73365fad389a1.js",
+      "static/chunks/app/tools/pomodoro-focus-calculator/page-5ca8f0173ddf8217.js"
+    ],
+    "/tools/pomodoro-focus-calculator/layout": [
+      "static/chunks/webpack-dbbdc282e7aff405.js",
+      "static/chunks/fd9d1056-790ee93443143d43.js",
+      "static/chunks/2117-078bf551d6059bbc.js",
+      "static/chunks/main-app-24ea975713000c46.js",
+      "static/chunks/app/tools/pomodoro-focus-calculator/layout-4bbcf102603d7de7.js"
     ]
   }
 }

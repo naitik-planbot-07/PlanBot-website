@@ -3,6 +3,7 @@ import Image from 'next/image';
 import { createMetadata, createWebPageSchema, createBreadcrumbSchema, personSchema, SITE_URL } from '@/lib/seo';
 import StructuredData from '@/components/StructuredData';
 import BlogCard from '@/components/BlogCard';
+import SocialLinks from '@/components/SocialLinks';
 import { getAllPosts } from '@/lib/mdx';
 
 // SEO Fix (August 2026 GSC Fix):
@@ -47,9 +48,7 @@ export default function AuthorPage() {
               </p>
             </div>
             <div className="mt-6">
-              <a href="https://www.linkedin.com/in/naitik-baldaniya-b0079234a" target="_blank" rel="noopener noreferrer" className="btn-secondary inline-block">
-                Connect on LinkedIn ↗
-              </a>
+              <SocialLinks />
             </div>
           </div>
         </div>
