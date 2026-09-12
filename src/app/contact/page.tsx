@@ -10,6 +10,7 @@ export const metadata: Metadata = createMetadata({
 
 import StructuredData from '@/components/StructuredData';
 import { createBreadcrumbSchema, SITE_URL } from '@/lib/seo';
+import ContactForm from '@/components/ContactForm';
 
 export default function ContactPage() {
   return (
@@ -69,33 +70,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="glass-card p-8">
-              <h2 className="text-xl font-bold text-white mb-6">Send us a message</h2>
-              <form action="mailto:plannexttech@gmail.com" method="post" encType="text/plain" className="space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-text-secondary mb-1">Your Name</label>
-                  <input type="text" name="name" required className="w-full bg-surface/50 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-accent" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-text-secondary mb-1">Email Address</label>
-                  <input type="email" name="email" required className="w-full bg-surface/50 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-accent" />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-text-secondary mb-1">Topic</label>
-                  <select name="topic" className="w-full bg-surface/50 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-accent">
-                    <option value="support">Technical Support</option>
-                    <option value="billing">Billing Inquiry</option>
-                    <option value="feedback">Feature Request / Feedback</option>
-                    <option value="business">Business / Partnership</option>
-                  </select>
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-text-secondary mb-1">Message</label>
-                  <textarea name="message" required rows={4} className="w-full bg-surface/50 border border-white/10 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-accent"></textarea>
-                </div>
-                <button type="submit" className="btn-primary w-full py-3 mt-2">Send Message</button>
-              </form>
-            </div>
+            <ContactForm />
           </div>
       </section>
     </>
