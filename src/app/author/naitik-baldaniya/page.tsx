@@ -9,7 +9,7 @@ import { getAllPosts } from '@/lib/mdx';
 // Use createMetadata to enforce self-referencing canonicals and language alternates for author profile.
 export const metadata: Metadata = createMetadata({
   title: 'Naitik Baldaniya - Founder & CEO of PlanBot',
-  description: 'Productivity expert and software developer dedicated to building AI-driven scheduling and focus systems.',
+  description: 'The 17-year-old founder of PlanBot - started coding at 12, began PlanBot at 14 in May 2024, launched 1 March 2026. The full story.',
   path: '/author/naitik-baldaniya',
 });
 
@@ -40,17 +40,14 @@ export default function AuthorPage() {
             <p className="text-lg md:text-xl font-medium text-accent mb-4">Founder & CEO, PlanBot</p>
             <div className="text-text-secondary mb-6 leading-relaxed">
               <p className="mb-4">
-                Naitik is a productivity systems architect and software developer with experience building high-performance applications. He founded PlanBot out of a personal necessity to overcome severe procrastination and fragmented study schedules during his own rigorous academic preparation.
-              </p>
-              <p className="mb-4">
-                With a deep background in algorithmic time-blocking and behavioral psychology, his work centers on replacing manual, static to-do lists with dynamic, AI-driven focus engines. Prior to building PlanBot, Naitik developed several specialized tools for students and professionals to automate repetitive workflows.
+                Naitik Baldaniya is a 17-year-old software developer from Gujarat, India - and the founder of PlanBot. He wrote his first program at 12, started building PlanBot in May 2024 at age 14, and launched it on Google Play on 1 March 2026. He is currently finishing a Diploma in IT in Ahmedabad (class of 2027) while running PlanBot solo.
               </p>
               <p>
-                His expertise spans <strong>AI Scheduling Algorithms</strong>, <strong>Spaced Repetition Systems (SRS)</strong>, and <strong>Diurnal Energy Optimization</strong>. His mission is to democratize elite-level executive functioning for the students and professionals relying on PlanBot today.
+                PlanBot began at the gym in May 2024, from one honest observation: he could not manage his own time, and every to-do app he tried only stored tasks instead of making the plan. So he built the AI that does the planning - you provide the goal, it provides the schedule. He is self-taught, works solo under PlannextTech (founded 2024), and ships everything himself, from the AI plan builder to the focus timer. His mission: make real AI planning free enough for every student tired of color-coded to-do lists that never get done.
               </p>
             </div>
             <div className="mt-6">
-              <a href="https://www.linkedin.com/in/naitik-baldaniya" target="_blank" rel="noopener noreferrer" className="btn-secondary inline-block">
+              <a href="https://www.linkedin.com/in/naitik-baldaniya-b0079234a" target="_blank" rel="noopener noreferrer" className="btn-secondary inline-block">
                 Connect on LinkedIn ↗
               </a>
             </div>

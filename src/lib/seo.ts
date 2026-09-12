@@ -142,7 +142,7 @@ export const organizationSchema = {
     jobTitle: 'Founder & CEO',
     url: `${SITE_URL}/about`,
       sameAs: [
-        'https://www.linkedin.com/in/naitik-baldaniya',
+        'https://www.linkedin.com/in/naitik-baldaniya-b0079234a',
         'https://www.instagram.com/planbotai?igsh=bXplYm92dG13c3Jq',
         'https://x.com/planbotai'
       ],
@@ -186,12 +186,15 @@ export const personSchema = {
   '@type': 'Person',
   name: 'Naitik Baldaniya',
   jobTitle: 'Founder & CEO',
+  birthDate: '2009-08-28',
   image: `${SITE_URL}/images/naitik-baldaniya.jpg`,
   url: `${SITE_URL}/author/naitik-baldaniya`,
   sameAs: [
-    'https://www.linkedin.com/in/naitik-baldaniya',
+    'https://www.linkedin.com/in/naitik-baldaniya-b0079234a',
     'https://www.instagram.com/planbotai?igsh=bXplYm92dG13c3Jq',
-    'https://x.com/planbotai'
+    'https://x.com/planbotai',
+    'https://x.com/Naitikbaldaniya',
+    'https://youtube.com/@planbotai'
   ],
   worksFor: {
     '@id': `${SITE_URL}/#organization`

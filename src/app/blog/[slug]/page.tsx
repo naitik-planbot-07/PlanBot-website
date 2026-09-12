@@ -170,7 +170,7 @@ export default function BlogPost({ params }: Props) {
               </p>
               <div className="flex items-center gap-4">
                 <a href="/author/naitik-baldaniya" className="text-xs font-semibold text-primary hover:underline">View Full Profile →</a>
-                <a href="https://www.linkedin.com/in/naitik-baldaniya" target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-[#0A66C2] hover:underline">Connect on LinkedIn ↗</a>
+                <a href="https://www.linkedin.com/in/naitik-baldaniya-b0079234a" target="_blank" rel="noopener noreferrer" className="text-xs font-semibold text-[#0A66C2] hover:underline">Connect on LinkedIn ↗</a>
               </div>
             </div>
           </div>
