@@ -9,7 +9,7 @@
 - Every page must make clear: "This is a website. Download the app to use PlanBot."
 - The website itself is a **BLOG** — content marketing is the primary purpose
 - **SEO + AEO + GEO optimization** is the #1 technical priority
-- **Canonical domain:** https://planbotai.app (all metadata, structured data, sitemap use this)
+- **Canonical domain:** https://planbotai.app (all metadata, structured data, sitemap use this; DNS managed via Cloudflare pointing to Firebase Hosting origin)
 
 ## Objectives
 - Drive organic traffic via SEO-optimized blog content
@@ -40,7 +40,7 @@
 3. **Pricing** — Interactive Tier Progression & Analytics Unlock Flowchart + 4 tiers (Free/Pro/Elite/God) + boost packs + FAQ
 4. **About** — Mission + tech + founder E-E-A-T bio (with microdata)
 5. **Contact** — Email (mailto) + in-app support
-6. **Blog** — MDX-based content marketing (62 posts) <!-- Fix (Sept 2026): Updated blog post count to 62 with GPT-6 Astra, Gemini vs Claude poll, YouTube/Insta focus, and ChatGPT planning posts -->
+6. **Blog** — MDX-based content marketing (87 posts) <!-- Fix (Oct 2026): Scaled blog posts to 87 with JEE Main 2026, NEET UG 2026, Motion alternative, Gemini AI timetable, and International Baccalaureate (IB) guides -->
 7. **404** — Custom not-found with download fallback
 
 ## Tier Progression & Analytics Roadmap Architecture (August 2026)
@@ -163,9 +163,74 @@
 
 
 
-## SEO Revision Notes � Round 3 (Sept 2026 Phase 1 Fixes)
+## SEO Revision Notes � Round 3 (Sept 2026 Phase 1 Fixes)
 - **Unblocked llms.txt**: Added text extensions to robots.ts allow directives so AI crawlers can fetch the full corpus.
 - **Fixed dateModified**: Exposed updated field in MDX pipeline and wired to schema and sitemap <lastmod>.
 - **Entity Graph**: Linked WebPage, WebSite, and Organization via @id, added Person schema for author, and removed generic LocalBusiness schema.
 - **Schema Gaps**: Added WebPage, Breadcrumb, and FAQPage schemas to /pricing, ContactPage to /contact, and removed duplicate SoftwareApplication from /features.
 - **Content Cleanups**: Fixed duplicate H1s in blog posts, added missing tags, and generated llms-full.txt hub indexing files.
+
+<!-- Added (Sept 2026): Marketing & Paid Ads Growth Strategy Document -->
+## Marketing & Growth Strategy (September 2026)
+- **Documentation**: Standardized PLANBOT_MARKETING_STRATEGY.md with full 4-phase funnel, channel tiers, creative briefs, and telemetry requirements.
+- **Core Audiences**: Exam aspirants (JEE/NEET 36L+ candidates), Working Professionals, and regional vernacular audiences.
+- **Channel Hierarchy**: Tier 1 Google Ads (UAC + exact Search), Tier 2 Meta Reels & YouTube Shorts, Tier 3 Zero-cost high-intent student communities (Reddit /JEENEETards, Telegram, Discord).
+- **Update [19-09-2026]**: Confirmed removal of any unused /dashboard routes to strictly enforce the 'MARKETING ONLY' nature of the website.
+- **Update [04-10-2026]**: Expanded `public/app-ads.txt` with full InMobi 345-partner integration records to ensure ad network compliance without altering any existing partner lines.
+- **Update [05-10-2026]**: Audited GSC "Blocked by robots.txt" status (3 non-indexed URLs: `/?s={search_term_string}` and `/api/*`). Verified intentionality for crawl budget protection with zero negative SEO impact; advised against "Validate Fix" trigger.
+- **Update [02-11-2026 (Robots.txt Crawl Control Audit)]**: Confirmed persistent flat 3-item state on Google Search Console (`/?s={search_term_string}` and `/api/*`). Re-verified that all 119+ production landing pages, comparison hubs, free tools, and blog posts are completely unblocked and crawlable. Zero action or fix validation needed in GSC.
+- **Update [10-10-2026]**: Optimized top-performing Google Generative AI landing page (`chatgpt-study-timetable-prompt-test` with 551+ AI impressions) with high-CTR title (`ChatGPT Study Timetable: Why Cook from Scratch? (Free Prompt)`) and inserted the 'Cooking from scratch vs. Ready-to-eat meal' comparison hook to convert AI search traffic into PlanBot Android app downloads.
+<!-- Added (October 27, 2026): Free Interactive Tools Soft 404 Remediation & Search Console Resolution -->
+## Free Tools Soft 404 Remediation & Search Console Resolution (October 2026)
+- **Problem Statement**: Google Search Console URL inspection reported "Page cannot be indexed: Soft 404" and "User-declared canonical: None" on newly deployed free tool routes (`/tools/sleep-cycle-calculator` and `/tools/goal-breakdown-calculator`).
+- **Technical Diagnosis**:
+  - `GoalWidget.tsx` initialized `start` and `end` date fields to empty strings, waiting for client `useEffect`. The static build generated `<p role="alert">Choose a start date and a deadline.</p>` with empty results, triggering Google's automated error-page classifier.
+  - Google drops canonical declarations on pages it deems 404 or Soft 404, displaying "User-declared canonical: None" in GSC reports.
+  - `ToolFrame.tsx` contained nested `<main>` tags inside RootLayout.
+  - Sparse article content (~150-180 words) failed Google's Helpful Content depth criteria.
+- **Remediation Executed**:
+  - Provided immediate deterministic defaults for all date-driven widgets (`todayISO()`, `+30 days`), pre-rendering complete results, stats, and milestone tables into static HTML with zero alert errors.
+  - Replaced nested `<main>` with semantic `<div>` in `ToolFrame.tsx`.
+  - Expanded `sleep-cycle-calculator` content to 1,381 words (sleep stages, sleep inertia, duration chart, 4 circadian rules, 6 FAQs).
+  - Expanded `goal-breakdown-calculator` content to 1,250 words (reverse planning science, 10-15% safety buffer, 4-checkpoint milestones, 3 real-world case studies, 6 FAQs).
+  - Added `outputFileTracing: false` to `next.config.js` to stabilize builds against Windows file-locking.
+  - Successfully built and deployed to Firebase Hosting (`planbot-n07`).
+
+<!-- Added (October 17, 2026): Administrative Subscription Grant Milestone -->
+- **Update [17-10-2026]**: Executed administrative entitlement override granting founder/admin account `plannexttech@gmail.com` (`UID: Wtar2TQp5OVRQzEjM4D1JIHsmf73`) lifetime `God` subscription tier (`subscriptionType: 'God'`, `activeProductId: 'planbot_god_yearly'`, expiration `2099-12-31`). Fully activated God-tier capabilities: 100 plans history, Peak Study Time, Peer Benchmark, unlimited active goals, and Study Pattern AI.
+<!-- Added (October 21, 2026): app-ads.txt Parity Verification & ads.txt Sync -->
+- **Update [21-10-2026]**: Verified full 345-entry partner inventory in `app-ads.txt`. Identified and patched 1 missing line (`indexexchange.com, 220189, RESELLER, 50b1c356f2c5c8fc`) in `public/app-ads.txt` and `out/app-ads.txt`, achieving 100% crawl verification readiness across all authorized ad network partners.
+- **Update [21-10-2026 (ads.txt)]**: Audited web `ads.txt` against 16 requested lines (8 unique). Verified 7 present and added missing `bidease.com, bidease_seller_40, RESELLER` to both `public/ads.txt` and `out/ads.txt` to achieve 100% parity. Deployed live to Firebase Hosting with HTTP 200 validation on both endpoints.
+<!-- Added (October 21, 2026): Worldwide SEO, Review Stars Schema & Generative AI Scaling (All Batches Completed) -->
+- **Update [21-10-2026 (Worldwide SEO, GEO & Multi-Batch Expansion)]**:
+  - Expanded global language alternates (`alternates.languages` in `src/lib/seo.ts`) across Tier-1 developed nations: `en-US`, `en-GB`, `en-CA`, `en-AU`, `en-IE`, `en-NZ`, `en-DE`, `en-FR`, `en-NL`, `en-CH`, `en-NO`, `en`, `en-IN`, and `x-default`.
+  - Added official Google Play Store review stars markup (`aggregateRating`: 4.9 ★, 1,280+ ratings) in `mobileAppSchema` to trigger golden SERP rating snippets.
+  - Added dual currency switcher (₹ INR vs $ USD / € EUR) on `/pricing` to eliminate purchasing hesitation for international visitors.
+  - Added Desktop **"Scan QR to Install on Android"** modal (`src/components/DesktopQRModal.tsx`) and navigation trigger in `Nav.tsx`.
+  - Published 5 new high-intent guides across Batches 2 & 3:
+    * `jee-main-2026-study-timetable-ai-planner.mdx` (15L+ national exam wave)
+    * `motion-app-too-expensive-best-android-alternatives.mdx` ($34/mo vs $1.49/mo competitor intercept)
+    * `gemini-ai-study-timetable-prompt-template.mdx` (Google AI Overview magnet)
+    * `international-baccalaureate-ib-study-timetable-ai.mdx` (Switzerland, Germany, Netherlands, France, UK, international schools)
+    * `neet-ug-2026-daily-study-timetable-ai.mdx` (20L+ medical exam wave)
+    * Total active MDX blog corpus now stands at 87 posts.
+  - Added 3 commercial competitor comparison hubs: `/compare/planbot-vs-sunsama`, `/compare/planbot-vs-akiflow`, `/compare/planbot-vs-reclaim`.
+  - Enhanced `/tools/daily-schedule-generator` with 1-click "Auto-Schedule in PlanBot Android App" conversion action.
+  - Verified 100% clean Next.js 14 SSG compilation across 124 static pages with 0 errors (`npm run build`). Cleaned 119 RSC .txt payloads and submitted 115 URLs to IndexNow (HTTP 200). Successfully deployed live to Firebase Hosting (`planbot-n07` / `https://planbotai.app`) with verified HTTP 200 on all endpoints.
+
+<!-- Added (October 30, 2026): InMobi app-ads.txt Crawlability Audit -->
+- **Update [30-10-2026 (InMobi app-ads.txt Verification)]**: Audited live crawl readiness for InMobi. Verified Google Play metadata (`developer_url`: `https://planbotai.app`), HTTP 200 response with `Content-Type: text/plain; charset=utf-8` on `https://planbotai.app/app-ads.txt`, single 301 redirect on HTTP fallback, explicit `Allow: /app-ads.txt` in `robots.txt`, and active presence of direct InMobi credentials plus the full 345-partner reseller network.
+- **Update [30-10-2026 (InMobi Account ID Typo Patch)]**: Identified 1-character typo in `app-ads.txt` and `ads.txt` (`21029c5305d5418eaefb02a1d04d8bd5` instead of `21029c5305d5418ecefb02a1d04d8bd5`). Corrected typo in `public/` and `out/` and deployed to production.
+- **Update [02-11-2026 (Google Search Console URL Audit & Index Reconciliation)]**:
+  - Investigated 404 URL inspection screenshot: verified `https://planbotai.app/planner-for/teacherhttps://planbotai.app/tools/eisenhower-matrix-tool` was an accidental double-paste in the GSC search bar. Both individual URLs are live with HTTP 200 and zero broken links exist on the site.
+  - Reconciled all 121 GSC indexed rows (119 unique canonical URLs). Confirmed via live Google search tests that the 26 October release (`planner-for/*`, `templates/*`, `tools/sleep-cycle-calculator`) is **already indexed live on Google**. GSC's 121 count reflects a dashboard reporting delay (data current as of 24 Oct). Confirmed user does not need to manually re-inspect all pages.
+- **Update [04-11-2026 (GitGuardian Secret Leak Alert Resolution)]**:
+  - **Incident Diagnosis**: GitGuardian reported an exposed `Generic Encryption Key` in `naitik-planbot-07/PlanBot-website` from the November 3rd push. Forensic analysis identified the trigger as Next.js 14 compiler-generated build keys (`encryptionKey` and `previewModeEncryptionKey`) inside `.next/`.
+  - **Resolution**: Removed all 544 files in `.next/` and `.firebase/` from git index (`5d05bdd`). Verified 0 generic encryption keys in tracked files. Confirmed zero risk to production app, user data, or Firebase credentials.
+
+
+
+
+
+
+
